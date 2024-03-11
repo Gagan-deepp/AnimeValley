@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Madimi+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: black;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6d6d6d;
+}
+
+@layer components {
+
+  .thread-card_bar {
+    @apply relative w-0.5 bg-light-3;
+  }
+
+  .heading {
+    @apply font-heading font-bold text-3xl
+  }
+
+  .subHeading {
+    @apply font-ui-text font-extrabold text-2xl
+  }
+
+  .heading-new {
+    @apply font-heading-design text-4xl text-light-2 font-normal uppercase tracking-wider
+  }
+
+  .form_input {
+    @apply border border-dark-4 bg-dark-3 text-light-1;
+  }
+
+  /* bg-[#1f2035] */
+  .leftsidebar {
+    @apply sticky left-0 top-0 z-[5] flex h-screen w-fit pr-4 flex-col items-center gap-4 overflow-auto pb-5 pl-6 pt-4 max-md:hidden;
+  }
+
+  .main-container {
+    @apply flex min-h-screen flex-1 flex-col items-center pl-6 pr-4 pb-10 pt-5 max-md:pb-32 sm:pl-10 sm:pr-6;
+  }
+
+  .rightsidebar {
+    @apply sticky right-0 top-0 z-[5] flex h-screen w-fit flex-col justify-between gap-12 overflow-hidden px-2 pb-6 pt-4 max-xl:hidden;
+  }
+}
+
+@layer utilities {
+  .wrapper {
+    @apply w-[80rem] lg:mx-auto p-2 md:px-10 xl:px-0 max-w-full;
+  }
+
+  .slideWrapper {
+    @apply w-[80rem] lg:mx-auto p-2 md:px-10 xl:px-0 max-w-[90%];
+  }
+
+  .profile_label {
+    @apply flex h-24 w-24 items-center justify-center rounded-full bg-dark-4 !important;
+  }
+
+  .profile_image {
+    @apply cursor-pointer border-none bg-transparent outline-none file:text-blue !important;
+  }
+
+  .flex-between {
+    @apply flex justify-between items-center;
+  }
+
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+
+}
+
+.no-focus {
+  @apply focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0 !important;
+}
+
+.swiper-pagination-bullet {
+  width: 3rem !important;
+  height: 0.25rem !important;
+  background: #bdc1c6;
+  border-radius: 1rem !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: white !important;
+}
+
+.tab {
+  @apply flex overflow-hidden min-h-[50px] flex-1 items-center gap-3 bg-[#202020] text-light-2 data-[state=active]:bg-[#0e0e12] data-[state=active]:text-gray-5 !important;
+}

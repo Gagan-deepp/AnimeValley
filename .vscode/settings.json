@@ -1,0 +1,15 @@
+{
+    "discord.enabled": true,
+    "todohighlight.keywords": [
+        {
+            "text": "NOTE:",
+            "color": "#fafafa",
+            "backgroundColor": "#ff0839",
+        },
+        {
+            "text": "IMP:",
+            "color": "black",
+            "backgroundColor": "#05f0bd",
+        },
+    ]
+}
