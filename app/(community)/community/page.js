@@ -7,6 +7,7 @@ import { currentUser } from '@clerk/nextjs'
 import { redirect } from 'next/dist/server/api-utils';
 import { TbArrowBigRightFilled } from "react-icons/tb";
 
+// NOTE: Function
 const page = async () => {
 
   const user = await currentUser()
