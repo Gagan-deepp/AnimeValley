@@ -28,7 +28,7 @@ const page = async () => {
     <section className="w-full flex gap-6" >
       <div className='w-full flex-1' >
         <div className='my-8 text-light-5'>
-          <h1 className='font-heading-2 text-3xl font-medium flex items-center gap-4' > Whispers of Connection <TbArrowBigRightFilled />  </h1>
+          <h1 className='font-heading-2 text-3xl font-medium flex items-center gap-2' > Whispers of Connection <TbArrowBigRightFilled />  </h1>
         </div>
         {
           resultPost.allTalks.length === 0 ? (<p> No Talks Currently On At This Time !! </p>) : (

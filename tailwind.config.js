@@ -14,6 +14,7 @@ module.exports = {
       'ui-text': ['Ubuntu', 'sans-serif'],
       'ui-text-2': ['Itim', 'sans-serif'],
       'ui-text-3': ['Quicksand', 'sans-serif'],
+      'ui-text-4': ['Balsamiq Sans', 'sans-serif'],
       'heading': ["Roboto", 'sans-serif'],
       'heading-2': ["Rubik", 'sans-serif'],
       'heading-design': ["Madimi One", 'sans-serif'],
