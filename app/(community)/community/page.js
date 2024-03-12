@@ -48,7 +48,7 @@ const page = async () => {
           )
         }
       </div>
-      <Rightsidebar communities={result.allCommunities} author={result.createdBy} />
+      <Rightsidebar communities={result.allCommunities} author={result.authorCreated} />
     </section>
   )
 }
