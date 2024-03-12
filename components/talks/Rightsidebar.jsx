@@ -1,10 +1,10 @@
 import Image from "next/image"
 import Link from "next/link"
 
-const Rightsidebar = async ({ communities }) => {
+const Rightsidebar = async ({ communities ,author }) => {
 
   console.log("Communities : ", communities)
-  console.log("Communities Members : ", communities.members)
+  console.log("Author : ", author)
   return (
     <Link href={"/"} className='rightsidebar bg-[#5b5464] rounded-3xl mt-8' >
       <div>

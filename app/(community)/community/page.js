@@ -17,13 +17,11 @@ const page = async () => {
   if (!userInfo.onBoard) redirect("/onboarding")
 
   const resultPost = await fetchPost();
-
   const result = await fetchCommunities({
     searchText: "",
     pageNo: 1,
     pageSize: 5
   })
-  console.log(result)
   return (
     <section className="w-full flex gap-6" >
       <div className='w-full flex-1' >
@@ -50,7 +48,7 @@ const page = async () => {
           )
         }
       </div>
-      <Rightsidebar communities={result.allCommunities} />
+      <Rightsidebar communities={result.allCommunities} author={result.createdBy} />
     </section>
   )
 }
