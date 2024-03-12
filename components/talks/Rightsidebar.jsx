@@ -4,6 +4,7 @@ import Link from "next/link"
 const Rightsidebar = async ({ communities }) => {
 
   console.log("Communities : ", communities)
+  console.log("Communities Members : ", communities.members)
   return (
     <Link href={"/"} className='rightsidebar bg-[#5b5464] rounded-3xl mt-8' >
       <div>
@@ -12,7 +13,8 @@ const Rightsidebar = async ({ communities }) => {
         <div className=' flex flex-col gap-2 mt-5'>
           {communities.map((community, index) => (
             <div key={index} className="rounded-2xl bg-red-400 p-4 flex gap-3" >
-              <div className="w-24 h-24 relative" >
+              <div className="w-20 h-20 relative" >
+                <Image src={community.members.image} fill alt={community.members.name} className="object-cover rounded-full" />
               </div>
             </div>
           ))}
