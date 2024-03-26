@@ -5,13 +5,32 @@ import Link from 'next/link'
 import { dark } from '@clerk/themes'
 import Image from 'next/image'
 import { Input } from '../ui/input'
+import { usePathname, useRouter } from 'next/navigation'
+import { useEffect, useState } from 'react'
+import { useDebounce } from 'use-debounce'
 
 const AddTalk = () => {
 
+    const router = useRouter()
+    const pathname = usePathname()
+    const [text, setText] = useState("")
+    const [query] = useDebounce(text, 750)
+    // const initialRender = useRef(true)
+
+    useEffect(() => {
+        if (!query) {
+            if (pathname === "/community") {
+                router.push(`/community`)
+            }
+        } else {
+            router.push(`/community?search=${text}`)
+        }
+    }, [query])
+
     return (
         <div className='flex gap-8 w-full justify-between' >
-            <div className='bg-[#1f1d33] text-gray-1 px-4 py-2 flex items-center w-[70%] rounded-3xl gap-4'>
-                
+            <div className='bg-[#1f1d33] text-gray-1 px-4 py-2 flex items-center md:w-[70%] w-[50%] rounded-3xl gap-4'>
+
                 <div className='flex flex-1' >
                     <Image
                         src={'/assest/search.svg'}
@@ -19,10 +38,10 @@ const AddTalk = () => {
                         width={20}
                         height={20}
                     />
-                    <Input className='bg-transparent border-none text-light-6 w-full h-full text-base font-bold font-ui-text-3' type="text" placeholder="Explore Talk....?" onChange={(e)=>{console.log(e)}} />
+                    <Input className='bg-transparent border-none text-light-6 w-full h-full text-base font-bold font-ui-text-3' type="text" placeholder="Explore Talk....?" value={text} onChange={e => setText(e.target.value)} />
                 </div>
 
-                <Link href={"/create-talk"} >
+                <Link href={"/create-talk"}>
                     <Button className="bg-light-7 p-2 rounded-2xl" >
                         <Image
                             src={'/assest/add.svg'}

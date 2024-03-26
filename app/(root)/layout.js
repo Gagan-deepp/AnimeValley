@@ -1,6 +1,9 @@
 import { Inter } from "next/font/google";
 import "../globals.css";
+import { Toaster } from 'sonner'
 import { ClerkProvider } from "@clerk/nextjs";
+import Header from "@/components/webcomp/Header";
+import Footer from "@/components/webcomp/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -9,8 +12,6 @@ export const metadata = {
     description: "A common hotspot for all anime , manga , manhwalover",
 };
 
-import Footer from "@/components/webcomp/Footer";
-import Header from "@/components/webcomp/Header";
 
 export default function RootLayout({ children }) {
 
@@ -18,12 +19,16 @@ export default function RootLayout({ children }) {
 
         <ClerkProvider>
             <html lang="en">
-                <body className={`${inter.className}`}>
-                    <Header />
-                    <div className="flex h-screen flex-col" >
-                        <main className="flex-1" > {children} </main>
-                        <Footer />
+                <body className={`${inter.className} bg-dark-3`}>
+                    <div className="flex" >
+                        <main className="flex-1" >
+                            <section className='flex' >
+                                <Header />
+                                {children}
+                            </section>
+                        </main>
                     </div>
+                    <Toaster richColors expand={false} position="top-center"/>
                 </body>
             </html>
         </ClerkProvider>

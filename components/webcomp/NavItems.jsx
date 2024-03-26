@@ -1,28 +1,30 @@
 'use client'
-import { navitemData } from '@/constants/data'
 import Link from 'next/link'
+import { motion } from "framer-motion"
+import { navitemData } from '@/constants/data'
 import { usePathname } from 'next/navigation'
-import React from 'react'
 
 const NavItems = () => {
 
     const pathname = usePathname();
-
     return (
-        <ul className='md:flex-between flex gap-5' >
-            {navitemData.map((items, index) => {
 
-                const isActive = pathname == items.href
+        <div>
 
-                return (
-                    <li key={index} className={`hover:scale-[1.1] transition-all ease-in-out duration-150 text-slate-600 ${isActive && 'text-black'} relative flex-center whitespace-nowrap`} >
+            <ul className='flex gap-3 justify-evenly'>
+                {navitemData.map((items, index) => {
 
-                        <Link href={items.href} className={`font-ui-text font-semibold ${isActive ? 'after:block' : 'after:hidden'} after:w-full after:h-[0.1rem] after:bg-slate-700 after:absolute after:bottom-0 after:left-0  after:rounded-2xl `} >
-                            {items.name}
-                        </Link>
-                    </li>)
-            })}
-        </ul>
+                    const isActive = pathname == items.href
+                    return (
+                        <li key={index} className={` text-gray-3 relative flex-center whitespace-nowrap `} >
+                            {isActive && <motion.span layoutId='navBgHome' className='bg-light-2 absolute top-0 bottom-0 left-0 right-0 w-full h-full rounded-2xl z-[-1]' />}
+                            <Link href={items.href} className={`font-ui-text font-semibold text-base ${isActive && 'text-gray-5 p-2'}`} >
+                                {items.name}
+                            </Link>
+                        </li>)
+                })}
+            </ul>
+        </div>
     )
 }
 

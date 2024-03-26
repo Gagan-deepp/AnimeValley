@@ -9,7 +9,6 @@ module.exports = {
   ],
   prefix: "",
   theme: {
-
     fontFamily: {
       'ui-text': ['Ubuntu', 'sans-serif'],
       'ui-text-2': ['Itim', 'sans-serif'],
@@ -32,20 +31,20 @@ module.exports = {
         'shadow_1': 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px'
       },
       backgroundImage: {
-        'button-bg': `linear-gradient(to right, #ffefba, #ffffff)`,
-        'button-bg-1': `linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%)`,
-        'button-bg-2': `linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%)`,
+        'button-bg': `linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%)`,
         'card-shadow': `linear-gradient(to bottom, transparent 0%, black 100%)`,
         'bg-main': `radial-gradient(343px at 46.3% 47.5%, rgb(242, 242, 242) 0%, rgb(241, 241, 241) 72.9%);`,
-        'bg-shadow': `linear-gradient(90deg,#181818 10%,hsla(0,0%,9%,.98) 20%,hsla(0,0%,9%,.97) 25%,hsla(0,0%,9%,.95) 35%,hsla(0,0%,9%,.94) 40%,hsla(0,0%,9%,.92) 45%,hsla(0,0%,9%,.9) 50%,hsla(0,0%,9%,.87) 55%,hsla(0,0%,9%,.82) 60%,hsla(0,0%,9%,.75) 65%,hsla(0,0%,9%,.63) 70%,hsla(0,0%,9%,.45) 75%,hsla(0,0%,9%,.27) 80%,hsla(0,0%,9%,.15) 85%,hsla(0,0%,9%,.08) 90%,hsla(0,0%,9%,.03) 95%,hsla(0,0%,9%,0)`,
+        'bg-shadow': `linear-gradient(180deg,#0000,#0003 20%,#0009 56%,#101012)`,
 
         'button-hover': `linear-gradient(to right, #ffafbd, #ffc3a0)`,
         'form_bg': 'linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);',
         'gradient-purple': 'linear-gradient(to right, #ed6ea0 0%, #ec8c69 100%)',
-        'gradient-button': 'linear-gradient(90deg, #A445B2 0%, #D41872 52%, #FF0066 100%)',
-
+        'text-gradient': 'radial-gradient( circle farthest-corner at 10% 20%,  rgba(253,101,133,1) 0%, rgba(255,211,165,1) 90% );',
       },
       colors: {
+        'mainColor': '#383143',
+        'mainColor-2': '#322d37a1',
+        'light-white': '#5b5464',
         'color-comment': '#2a2a42',
         'color-pink': '#fc408e',
         'card-bg': '#1d1b26',
@@ -59,7 +58,7 @@ module.exports = {
         "logout-btn": "#FF5A5A",
         "navbar-menu": "rgba(16, 16, 18, 0.6)",
         "dark-1": "#000000",
-        "dark-2": "#121417",
+        "dark-2": "#322d37a1",
         "dark-3": "#101012",
         "dark-4": "#1F1F22",
         "light-1": "#FFFFFF",
@@ -74,7 +73,9 @@ module.exports = {
         "gray-3": "#9e9e9e",
         "gray-4": "#767677",
         "gray-5": "#72728c",
-        glassmorphism: "rgba(16, 16, 18, 0.60)",
+        "gray-6": "#484d45",
+        glassmorphism: "rgba(255, 255, 255, 0.2)",
+        glassmorphism2: "rgba( 0, 0, 0, 0.25 )",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

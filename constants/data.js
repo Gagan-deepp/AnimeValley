@@ -115,5 +115,10 @@ export const sideBarItem = [
 export const ProfileTabs = [
     { value : "Talks" , name: "Talks" , img  : "/assest/bio.svg"},
     { value : "Replies" , name: "Replies" , img  : "/assest/profile.svg"},
-    { value : "Tagged" , name: "Tagged" , img  : "/assest/tag.svg"},
+    { value : "Bookmarks" , name: "Bookmarks" , img  : "/assest/tag.svg"},
+]
+export const CommunityTabs = [
+    { value : "talks" , name: "Talks" , img  : "/assest/bio.svg"},
+    { value : "members" , name: "Members" , img  : "/assest/profile.svg"},
+    { value : "requests" , name: "Requests" , img  : "/assest/tag.svg"},
 ]

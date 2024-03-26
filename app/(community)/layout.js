@@ -11,7 +11,6 @@ export const metadata = {
 
 import Footer from "@/components/webcomp/Footer";
 import Leftsidebar from "@/components/talks/Leftsidebar";
-import AddTalk from "@/components/talks/AddTalk";
 
 export default function RootLayout({ children }) {
 
@@ -19,17 +18,12 @@ export default function RootLayout({ children }) {
 
         <ClerkProvider>
             <html lang="en">
-                <body className={`${inter.className}`}>
-                    <div className="flex h-screen flex-col" >
-                        <main className="flex-1 bg-[#383143]" >
-                            <section className='flex flex-row' >
-                                <Leftsidebar />
-                                <div className='main-container items-start' >
-                                    <AddTalk />
-                                    <div className="w-full" >
-                                        {children}
-                                    </div>
-                                </div>
+                <body className={`${inter.className} max-w-[100vw] overflow-x-hidden`}>
+                    <div className="flex min-h-screen flex-col relative w-full" >
+                        <Leftsidebar />
+                        <main className="flex-1 bg-[#383143] w-full" >
+                            <section className='' >
+                                {children}
                             </section>
                         </main>
                         <Footer />

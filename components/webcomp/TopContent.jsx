@@ -1,20 +1,33 @@
-import { fetchAnime } from '@/lib/actions/fetch.action'
-import React from 'react'
+import { fetchAnime, fetchPopularAnime } from '@/lib/actions/fetch.action'
 import Card from './Card'
+import Arrow from '../extras/Arrow';
+import { currentUser } from '@clerk/nextjs';
+import { fetchUser } from '@/lib/actions/user.actions';
+import { redirect } from 'next/navigation';
 
-const TopContent = async () => {
+const TopContent = async ({ page, title }) => {
+    let response;
+    if (page === 'second') {
+        response = await fetchPopularAnime(1)
+    } else {
+        response = await fetchAnime(1)
+    }
 
-    const data = await fetchAnime(1)
+    const user = await currentUser();
+    const userInfo = await fetchUser({ userID: user?.id });
+    // if (userInfo?.onBoard) redirect("/");
+
     return (
 
-        <section className='slideWrapper' >
+        <section className='w-full pb-6 relative' >
             <div>
-                <h2 className='font-heading font-bold text-3xl' > Top Content </h2>
+                <h2 className='font-ui-text-4 font-bold text-3xl text-light-2' > {title} </h2>
             </div>
-            <div>
-                <Card data={data}/>
+            <div className='mt-12' >
+                <Card data={response?.data} userID={JSON.stringify(userInfo?._id)} />
             </div>
 
+            <Arrow href={"/"} />
         </section>
     )
 }

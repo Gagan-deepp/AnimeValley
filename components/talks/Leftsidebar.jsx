@@ -1,4 +1,5 @@
 'use client'
+import { motion } from 'framer-motion';
 import { sideBarItem } from '@/constants/data'
 import { SignedIn, UserButton, useAuth } from '@clerk/nextjs';
 import Image from 'next/image'
@@ -13,7 +14,7 @@ const Leftsidebar = () => {
 
 
   return (
-    <div className='leftsidebar overflow-hidden'>
+    <div className={`leftsidebar overflow-hidden pl-3 `}>
 
       <div className='flex flex-col' >
         <Link href={"/"} >
@@ -37,31 +38,32 @@ const Leftsidebar = () => {
             return (
               <li key={index} className={`cursor-pointer hover:scale-[1.1] transition-all ease-in-out duration-150 text-slate-600 relative flex items-start`} >
 
-                <Link href={items.href} className={`font-heading font-medium text-base text-light-1 flex items-center gap-4 p-2  ${isActive && 'bg-light-2 '} rounded-2xl `} >
+                <Link href={items.href} className="font-heading font-medium text-base text-light-1 flex items-center p-2 relative" title={items.name} >
+                  {isActive && <motion.span layoutId='navBg' className='bg-light-2 absolute top-0 bottom-0 left-0 right-0 w-full h-full rounded-2xl' />}
                   <Image
                     src={isActive ? items.ActiveimgURL : items.imgURL}
                     alt={items.name}
                     width={25}
                     height={25}
+                    className='z-10'
                   />
-                  <p className='hidden' > {items.name} </p>
                 </Link>
               </li>)
           })}
         </ul>
       </div>
 
-      <div className='flex-1 flex' >
+      <div className="items-end flex flex-1" >
         <div className='mt-auto pb-8 flex flex-col gap-6 items-center' >
-
-
           {pathname === "/activity" ?
-            <Link href={"/activity"} className='p-2 rounded-2xl bg-light-2' >
+            <Link href={"/activity"} className='p-2 relative' title='activity' >
+              {pathname === "/activity" && <motion.span layoutId='navBg' className='bg-light-2  absolute top-0 bottom-0 left-0 right-0 w-full h-full rounded-2xl z-[-1]' />}
               <Image
-                src={"/assest/bellActive.svg"}
+                src={pathname === "/activity" ? "/assest/bellActive.svg" : "/assest/bell.svg"}
                 alt="Activity"
                 width={25}
                 height={25}
+                className='z-10'
               />
             </Link>
             :

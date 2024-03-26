@@ -1,6 +1,7 @@
 import Image from "next/image"
+import Link from "next/link"
 
-const ProfileHeader = ({ user }) => {
+const ProfileHeader = ({ user, accountType }) => {
     return (
         <>
             <div className="bg-[#fdf3db] p-4 h-[10rem] relative rounded-3xl">
@@ -32,9 +33,9 @@ const ProfileHeader = ({ user }) => {
 
                 <div className="absolute right-0 w-24" >
                     <div className="absolute top-[-52px] " >
-                        <div className=" bg-light-2 p-2 rounded-2xl flex gap-2 font-semibold font-heading-2 cursor-pointer" >
+                        {user.Clerkid === user.Mongoid && accountType === 'User' && (<Link href={"/profile/edit"} className=" bg-light-2 p-2 rounded-2xl flex gap-2 font-semibold font-heading-2 cursor-pointer" >
                             <Image src={"/assest/edit.svg"} alt='edit' width={18} height={18} className="rounded-2xl" /> Edit
-                        </div>
+                        </Link>)}
                     </div>
                 </div>
             </div>

@@ -26,7 +26,7 @@ const page = async () => {
             <p className='font-bold text-light-2 text-base' > Complete Few More Steps to land your desired location </p>
 
             <section className='bg-dark-2 p-10 rounded-xl'>
-                <Onboard userData={userData} title={"continue"} />
+                <Onboard userData={userData} title={"Continue"} />
             </section>
         </main>
     )

@@ -2,10 +2,11 @@ import { ProfileTabs } from "@/constants/data"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs"
 import Image from "next/image"
 import ProfileTalk from "./ProfileTalk"
+import ProfileBookMark from "./ProfileBookMark"
 
-const ProfileTab = ({ length, accountType, accountId , currentUserId }) => {
+const ProfileTab = ({ length, accountType, accountId, currentUserId }) => {
     return (
-        <div className="mt-4" >
+        <div >
             <Tabs className="w-full rounded-2xl" defaultValue="talks" >
 
                 <TabsList className="tab rounded-2xl" >
@@ -20,11 +21,13 @@ const ProfileTab = ({ length, accountType, accountId , currentUserId }) => {
                     ))}
                 </TabsList>
 
-                {ProfileTabs.map((tab, index) => (
-                    <TabsContent key={index} value={tab.name} className="w-full" >
-                        <ProfileTalk accountType={accountType} accountId={accountId} currentUserId={currentUserId} />
-                    </TabsContent>
-                ))}
+                <TabsContent value="Talks" className="w-full" >
+                    <ProfileTalk accountType={accountType} accountId={accountId} currentUserId={currentUserId} />
+                </TabsContent>
+
+                <TabsContent value="Bookmarks" className="w-full" >
+                    <ProfileBookMark accountId={accountId} currentUserId={currentUserId} />
+                </TabsContent>
             </Tabs>
         </div>
     )

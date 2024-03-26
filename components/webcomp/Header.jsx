@@ -1,4 +1,4 @@
-import { OrganizationSwitcher, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
+import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -7,8 +7,8 @@ import NavItems from './NavItems'
 
 const Header = () => {
   return (
-    <header className='w-full backdrop-blur-md fixed top-0 left-0 right-0 border-b z-10' >
-      <div className='wrapper flex justify-between items-center' >
+    <header className='w-full fixed left-0 z-10' >
+      <div className='wrapper flex justify-between items-center relative ' >
         <Link href={"/"} >
           <Image
             src={"/addimg/test1.png"}
@@ -19,7 +19,7 @@ const Header = () => {
         </Link>
 
         <SignedIn>
-          <nav className='md:flex md:justify-between md:items-center hidden w-full max-w-xs ' >
+          <nav className='flex-[0.3]' >
             <NavItems />
           </nav>
         </SignedIn>
@@ -29,13 +29,6 @@ const Header = () => {
           <SignedIn>
             <UserButton afterSignOutUrl='/' />
           </SignedIn>
-          <OrganizationSwitcher
-            appearance={{
-              elements: {
-                organizationSwitcherTrigger: "py-2 px-4"
-              }
-            }}
-          />
 
           <SignedOut>
             <Button asChild className="transition duration-200 ease-in-out hover:scale-[1.1] rounded-full bg-button-hover" size="lg" >

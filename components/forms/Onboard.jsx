@@ -1,6 +1,6 @@
 'use client'
-
 import * as z from "zod";
+import { motion } from 'framer-motion'
 import { UserValidation } from '@/lib/validations/user';
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
@@ -8,7 +8,6 @@ import { zodResolver } from '@hookform/resolvers/zod'
 
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
-import { Button } from "../ui/button";
 import Image from "next/image";
 import { Textarea } from "../ui/textarea";
 import { isBase64Image } from "@/lib/utils";
@@ -85,8 +84,6 @@ const Onboard = ({ userData, title }) => {
         }
     }
 
-
-
     return (
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)}
@@ -130,12 +127,13 @@ const Onboard = ({ userData, title }) => {
                     render={({ field }) => (
                         <FormItem className=" flex flex-col gap-2 w-full" >
 
-                            <FormLabel className="text-base text-light-2 font-semibold" >Name</FormLabel>
+                            <FormLabel className="text-base text-light-2 font-semibold" >Name :</FormLabel>
 
                             <FormControl>
                                 <Input
+                                    placeholder=" Enter Your Name "
                                     type="text"
-                                    className="form_input rounded-xl"
+                                    className="talk_input placeholder:text-gray-3 no-focus borderHide"
                                     {...field}
                                 />
                             </FormControl>
@@ -147,12 +145,13 @@ const Onboard = ({ userData, title }) => {
                     render={({ field }) => (
                         <FormItem className=" flex flex-col gap-2 w-full" >
 
-                            <FormLabel className="text-base text-light-2 font-semibold" >Username</FormLabel>
+                            <FormLabel className="text-base text-light-2 font-semibold" >Username :</FormLabel>
 
                             <FormControl >
                                 <Input
                                     type="text"
-                                    className="form_input rounded-xl"
+                                    placeholder="Enter your Username"
+                                    className="talk_input placeholder:text-gray-3 no-focus borderHide"
                                     {...field}
                                 />
                             </FormControl>
@@ -164,12 +163,12 @@ const Onboard = ({ userData, title }) => {
                     render={({ field }) => (
                         <FormItem className=" flex flex-col gap-2 w-full" >
 
-                            <FormLabel className="text-base text-light-2 font-semibold" >Signature</FormLabel>
+                            <FormLabel className="text-base text-light-2 font-semibold" >Signature :</FormLabel>
 
                             <FormControl  >
                                 <Textarea
-                                    rows={10}
-                                    className="form_input rounded-xl"
+                                    rows={2}
+                                    className="talk_input placeholder:text-gray-3 no-focus borderHide"
                                     placeholder="Enter Your Signature (48)"
                                     {...field}
                                 />
@@ -178,7 +177,10 @@ const Onboard = ({ userData, title }) => {
                         </FormItem>
                     )}
                 />
-                <Button type="submit" className="bg-button-bg-2 rounded-xl font-semibold" >Submit</Button>
+                <motion.button type="submit" className="bg-button-bg rounded-xl font-semibold py-2" whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.9 }}
+                    transition={{ duration: 0.3, ease: [0.76, 0, 0.24, 1] }} >
+                    {title}
+                </motion.button>
             </form>
         </Form>
     )
