@@ -142,15 +142,20 @@ export const POST = async (request) => {
         }
     }
 
+    // NOTE: Updating User clerk dashboard
     if (eventType === "user.updated") {
         try {
-            // const { id } = evnt?.data;
+            const { id, image_url, username } = evnt?.data;
 
-            // await deleteCommunity(id)
+            await userProfileUpdate({
+                userID: id,
+                image: image_url,
+                userName: username
+            })
 
             console.log("User updated Successfully");
 
-            return NextResponse.json({ message: "User Updated Successfully" }, { status: 201 })
+            return NextResponse.json({ message: "User Updated Successfully Webhook" }, { status: 201 })
 
         } catch (error) {
             console.log(error);
