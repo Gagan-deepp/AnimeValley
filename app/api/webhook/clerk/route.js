@@ -2,6 +2,7 @@ import { Webhook } from "svix";
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 import { addMemberToCommunity, createCommunity, deleteCommunity, removeMemberFromCommunity, updateCommunity } from "@/lib/actions/community.action";
+import { userProfileUpdate } from "@/lib/actions/user.actions";
 
 export const POST = async (request) => {
     const payload = await request.json();
