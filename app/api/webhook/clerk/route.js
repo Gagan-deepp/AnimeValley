@@ -141,4 +141,23 @@ export const POST = async (request) => {
             );
         }
     }
+
+    if (eventType === "user.updated") {
+        try {
+            // const { id } = evnt?.data;
+
+            // await deleteCommunity(id)
+
+            console.log("User updated Successfully");
+
+            return NextResponse.json({ message: "User Updated Successfully" }, { status: 201 })
+
+        } catch (error) {
+            console.log(error);
+            return NextResponse.json(
+                { message: "Error in Updating User" },
+                { status: 500 }
+            );
+        }
+    }
 };

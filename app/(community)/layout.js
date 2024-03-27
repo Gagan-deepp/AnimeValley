@@ -11,6 +11,7 @@ export const metadata = {
 
 import Footer from "@/components/webcomp/Footer";
 import Leftsidebar from "@/components/talks/Leftsidebar";
+import BottomNav from "@/components/extras/BottomNav";
 
 export default function RootLayout({ children }) {
 
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
                                 {children}
                             </section>
                         </main>
+                        <BottomNav />
                         <Footer />
                     </div>
                 </body>

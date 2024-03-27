@@ -20,6 +20,8 @@ const MobileNav = () => {
     const { userId } = useAuth();
     const { user } = useUser()
 
+    console.log(user)
+
     const handleNav = () => {
         setisOpen(!isOpen);
         setisNavShow(!isNavShow);
@@ -95,7 +97,7 @@ const MobileNav = () => {
                                 </div>
                             </SignedOut>
 
-                            <div className="w-full h-[0.05rem] bg-light-1 mt-8 mb-5" />
+                            <div className="w-full h-[0.1rem] bg-light-1 mt-8 mb-5" />
 
                             <nav>
                                 <ul className='flex flex-col gap-5' >

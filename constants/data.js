@@ -153,33 +153,28 @@ export const bottomNavItem = [
     {
         name: 'Home',
         href: '/',
-        imgURL: "/assest/home.svg",
-        ActiveimgURL: "/assest/homeActive.svg",
+        imgURL: "/assest/homeActive.svg",
     },
     {
         name: 'Manga',
         href: '/manga',
         imgURL: "/assest/bottomSearch.svg",
-        ActiveimgURL: "/assest/bottomSearchActive.svg",
     },
 
     {
         name: 'Create',
         href: '/create-talk',
-        imgURL: "/assest/bottomAdd.svg",
-        ActiveimgURL: "/assest/bottomAddActive.svg",
+        imgURL: "/assest/bottomAddActive.svg",
     },
     {
         name: 'Community',
         href: '/community',
-        imgURL: "/assest/home.svg",
-        ActiveimgURL: "/assest/homeActive.svg",
+        imgURL: "/assest/commActive.svg",
     },
     {
         name: 'Profile',
         href: '/profile',
-        imgURL: "/assest/profile.svg",
-        ActiveimgURL: "/assest/profileActive.svg",
+        imgURL: "/assest/profileActive.svg",
     },
 ]
 
