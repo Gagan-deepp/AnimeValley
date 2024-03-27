@@ -111,6 +111,44 @@ export const sideBarItem = [
         ActiveimgURL: "/assest/homeActive.svg",
     },
 ]
+export const mobileNavItem = [
+    {
+        name: 'Home',
+        href: '/',
+        imgURL: "/assest/home.svg",
+        ActiveimgURL: "/assest/homeActive.svg",
+    },
+    {
+        name: 'Anime',
+        href: '/anime',
+        imgURL: "/assest/anime.svg",
+        ActiveimgURL: "/assest/animeActive.svg",
+    },
+    {
+        name: 'Manga',
+        href: '/manga',
+        imgURL: "/assest/book.svg",
+        ActiveimgURL: "/assest/bookActive.svg",
+    },
+    {
+        name: 'Profile',
+        href: '/profile',
+        imgURL: "/assest/profile.svg",
+        ActiveimgURL: "/assest/profileActive.svg",
+    },
+    {
+        name: 'Activity',
+        href: '/activity',
+        imgURL: "/assest/bell.svg",
+        ActiveimgURL: "/assest/bellActive.svg",
+    },
+    {
+        name: 'Community',
+        href: '/community',
+        imgURL: "/assest/home.svg",
+        ActiveimgURL: "/assest/homeActive.svg",
+    },
+]
 
 export const ProfileTabs = [
     { value : "Talks" , name: "Talks" , img  : "/assest/bio.svg"},

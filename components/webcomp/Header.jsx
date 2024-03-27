@@ -4,11 +4,12 @@ import Link from 'next/link'
 import React from 'react'
 import { Button } from '../ui/button'
 import NavItems from './NavItems'
+import MobileNav from '../extras/MobileNav'
 
 const Header = () => {
   return (
     <header className='w-full fixed left-0 z-10' >
-      <div className='wrapper flex justify-between items-center relative ' >
+      <div className='wrapper flex justify-between items-center relative flex-row-reverse sm:flex-row px-4' >
         <Link href={"/"} >
           <Image
             src={"/addimg/test1.png"}
@@ -18,14 +19,16 @@ const Header = () => {
           />
         </Link>
 
+        <MobileNav />
+
         <SignedIn>
-          <nav className='flex-[0.3]' >
+          <nav className='flex-[0.3] hidden sm:flex' >
             <NavItems />
           </nav>
         </SignedIn>
 
 
-        <div className=' flex justify-end w-32 gap-4 items-center'>
+        <div className=' hidden sm:flex justify-end w-32 gap-4 items-center'>
           <SignedIn>
             <UserButton afterSignOutUrl='/' />
           </SignedIn>

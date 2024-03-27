@@ -52,7 +52,7 @@ const Card = ({ data, userID }) => {
                     {data?.map((anime, index) => (
 
                         <motion.div key={index} className='flex w-full h-full justify-center rounded-2xl embla2__slide flex-col relative overflow-hidden' style={{ opacity, scale, transformOrigin: "bottom center" }}
-                            transition={{ ease: [0.65, 0, 0.35, 1], delay: index * 0.1 }}
+                            transition={{ ease: [0.65, 0, 0.35, 1], delay: index * 5 }}
                         >
 
                             <div className='w-full h-full relative bg-mainColor-2 rounded-3xl' >

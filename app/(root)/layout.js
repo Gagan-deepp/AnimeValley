@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
             <html lang="en">
                 <body className={`${inter.className} bg-dark-3`}>
                     <div className="flex" >
-                        <main className="flex-1" >
+                        <main className="flex-1 relative" >
                             <section className='flex' >
                                 <Header />
                                 {children}
