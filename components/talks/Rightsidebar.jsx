@@ -2,6 +2,7 @@ import { fetchCommunities } from "@/lib/actions/community.action"
 import { FaChevronRight } from "react-icons/fa";
 import Image from "next/image"
 import Link from "next/link"
+import Arrow from "../extras/Arrow";
 
 const Rightsidebar = async () => {
 
@@ -18,7 +19,8 @@ const Rightsidebar = async () => {
       <div>
         <h3 className='heading-new text-xl text-light-6' > Top Communities ~ </h3>
 
-        <div className={`xl:grid sm:grid-cols-2 flex flex-wrap gap-4 mt-5 ${result.allCommunities.length === 0 ? "grid-cols-1" : ""}`}>
+        <div className={`grid grid-cols-2 gap-4 mt-5 relative ${result.allCommunities.length === 0 ? "grid-cols-1" : ""}`}>
+          <Arrow href={"/community"} />
           {result.allCommunities.length === 0 ?
             <p className="font-ui-text-4 font-bold text-light-6 text-center" > No Communities !! </p>
             : result.allCommunities.map((community, index) => (

@@ -40,7 +40,7 @@ const Arrow = ({ href }) => {
 
     return (
 
-        <motion.div className='rounded-full absolute right-0 bottom-0 md:flex hidden ' style={{ opacity, scale }} >
+        <motion.div className='rounded-full absolute right-10 bottom-0 md:flex hidden ' style={{ opacity, scale }} >
             <Link href={href} >
                 <motion.div
                     ref={targetContainer}

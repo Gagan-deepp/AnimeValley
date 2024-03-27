@@ -27,7 +27,7 @@ const page = async () => {
         <section className='main-container items-start' >
             <AddTalk />
             <div className="w-full" >
-                <div className='fw-full flex gap-6' >
+                <div className='fw-full flex gap-6 lg:flex-row flex-col-reverse' >
                     <div className='w-full flex-1' >
 
                         <div className='my-8 text-light-5'>
@@ -37,7 +37,9 @@ const page = async () => {
                         <CreateTalk communities={JSON.stringify(result?.allCommunities)} userId={userInfo._id.toString()} />
                     </div>
 
-                    <Rightsidebar />
+                    <div className='hidden sm:flex' >
+                        <Rightsidebar />
+                    </div>
                 </div>
             </div>
         </section>

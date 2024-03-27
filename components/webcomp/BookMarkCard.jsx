@@ -16,7 +16,7 @@ const BookMarkCard = ({ data }) => {
 
             <ScrollArea className="mb-2 h-[90vh] bg-mainColor-2 p-4 rounded-2xl" >
                 <div className="h-full" >
-                    <div className="h-full grid grid-cols-4">
+                    <div className="h-full grid grid-cols-2 sm:grid-cols-4">
                         {JSON.parse(data).map((anime, index) => (
 
                             <motion.div key={index} className='flex w-full h-[23rem] justify-center rounded-2xl flex-col relative overflow-hidden' style={{ opacity, scale, transformOrigin: "bottom center" }}

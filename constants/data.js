@@ -107,8 +107,8 @@ export const sideBarItem = [
     {
         name: 'Community',
         href: '/community',
-        imgURL: "/assest/home.svg",
-        ActiveimgURL: "/assest/homeActive.svg",
+        imgURL: "/assest/comm.svg",
+        ActiveimgURL: "/assest/commActive.svg",
     },
 ]
 export const mobileNavItem = [

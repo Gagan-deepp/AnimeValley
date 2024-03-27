@@ -20,8 +20,6 @@ const MobileNav = () => {
     const { userId } = useAuth();
     const { user } = useUser()
 
-    console.log(user)
-
     const handleNav = () => {
         setisOpen(!isOpen);
         setisNavShow(!isNavShow);

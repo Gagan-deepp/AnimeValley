@@ -28,7 +28,7 @@ const TalkCard = ({ id, currentUserId, parentId, content, author, community, cre
                 {community}
               </p>
               : ""}
-            <p className='text-gray-3 text-base lowercase font-ui-text-2 ' > @{author.userName} </p>
+            <p className='text-gray-3 text-base lowercase font-ui-text-2 ' > @{author.name} </p>
           </div>
         </div>
 
