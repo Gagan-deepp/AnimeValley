@@ -76,6 +76,7 @@ module.exports = {
         "gray-6": "#484d45",
         glassmorphism: "rgba(255, 255, 255, 0.2)",
         glassmorphism2: "rgba( 0, 0, 0, 0.25 )",
+        glassmorphism3: "rgba( 0, 0, 0, 0.4 )",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

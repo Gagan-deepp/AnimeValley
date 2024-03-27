@@ -4,6 +4,7 @@ import { Toaster } from 'sonner'
 import { ClerkProvider } from "@clerk/nextjs";
 import Header from "@/components/webcomp/Header";
 import Footer from "@/components/webcomp/Footer";
+import BottomNav from "@/components/extras/BottomNav";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,10 +26,11 @@ export default function RootLayout({ children }) {
                             <section className='flex' >
                                 <Header />
                                 {children}
+                                <BottomNav />
                             </section>
                         </main>
                     </div>
-                    <Toaster richColors expand={false} position="top-center"/>
+                    <Toaster richColors expand={false} position="top-center" />
                 </body>
             </html>
         </ClerkProvider>

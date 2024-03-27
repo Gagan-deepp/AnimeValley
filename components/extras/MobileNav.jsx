@@ -2,20 +2,28 @@
 import { useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 import HamBurger from "./HamBurger"
-import { SignInButton, SignOutButton, SignedIn, SignedOut, UserButton, useAuth } from "@clerk/nextjs"
+import { SignInButton, SignOutButton, SignedIn, SignedOut, UserButton, useAuth, useUser } from "@clerk/nextjs"
 import { mobileNavItem } from "@/constants/data"
 import { usePathname } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
 import { IoClose } from "react-icons/io5";
 import { TbLogout2 } from "react-icons/tb";
+import { dark } from "@clerk/themes"
 
 
 const MobileNav = () => {
 
     const [isOpen, setisOpen] = useState(false);
+    const [isNavShow, setisNavShow] = useState(true);
     const pathname = usePathname()
     const { userId } = useAuth();
+    const { user } = useUser()
+
+    const handleNav = () => {
+        setisOpen(!isOpen);
+        setisNavShow(!isNavShow);
+    }
 
     const variants = {
         initial: {
@@ -48,24 +56,29 @@ const MobileNav = () => {
         <div className="flex sm:hidden" >
 
             <div>
-                <HamBurger isOpen={isOpen} setisOpen={setisOpen} />
+                <HamBurger isOpen={isOpen} setisOpen={setisOpen} isNavShow={isNavShow} setisNavShow={setisNavShow} />
             </div>
 
             <AnimatePresence mode="wait" >
                 {isOpen &&
-                    <motion.div className="h-[85vh] w-3/5 bg-gray-4 fixed top-3 left-0 rounded-tr-3xl rounded-br-3xl  box-border"
+                    <motion.div className="h-[80vh] w-[80vw] bg-gray-4 fixed top-10 left-0 rounded-tr-3xl rounded-br-3xl box-border"
                         variants={variants} initial="initial" animate="animate" exit="exit" >
 
-                        <div className="px-8 py-12 box-border flex flex-col relative justify-between gap-8" >
+                        <div className="px-8 py-10 box-border flex flex-col relative justify-between h-full" >
 
-                            <div className="absolute top-3 right-3 cursor-pointer" onClick={() => setisOpen(!isOpen)} >
-                                <IoClose className="text-light-2 text-2xl" />
-                            </div>
+                            <motion.div className="absolute top-6 right-6 cursor-pointer" layoutId="navClose" onClick={() => handleNav()} >
+                                <IoClose className="text-light-2 text-3xl" />
+                            </motion.div>
 
                             <SignedIn>
                                 <div className="flex gap-3 items-center flex-row" >
-                                    <UserButton afterSignOutUrl='/' />
-                                    <p className="text-light-2 font-semibold font-ui-text-4" > Hii Gagan </p>
+                                    <UserButton afterSignOutUrl='/' appearance={{
+                                        baseTheme: dark,
+                                        elements: {
+                                            avatarBox: "w-16 h-16"
+                                        }
+                                    }} />
+                                    <p className="text-light-2 font-semibold font-ui-text-4" > @{user.username} </p>
                                 </div>
                             </SignedIn>
 
@@ -82,7 +95,7 @@ const MobileNav = () => {
                                 </div>
                             </SignedOut>
 
-                            <div className="w-full h-[0.05rem] bg-light-1" />
+                            <div className="w-full h-[0.05rem] bg-light-1 mt-8 mb-5" />
 
                             <nav>
                                 <ul className='flex flex-col gap-5' >
@@ -100,17 +113,17 @@ const MobileNav = () => {
                                                 exit="exit"
                                                 key={index} className={`cursor-pointer text-slate-600 relative flex items-start`} >
 
-                                                <Link href={items.href} className="flex gap-2 items-center p-2" title={items.name} >
+                                                <Link href={items.href} className="flex gap-4 items-center p-2" title={items.name} >
                                                     {isActive && <motion.span layoutId='navBg' className='bg-dark-3 absolute top-1/2 right-0 h-3 rounded-full w-3' />}
                                                     <Image
                                                         src={isActive ? items.ActiveimgURL : items.imgURL}
                                                         alt={items.name}
-                                                        width={20}
-                                                        height={20}
+                                                        width={25}
+                                                        height={25}
                                                         className='z-10'
                                                     />
 
-                                                    <p className={`font-heading font-medium text-base z-10 ${isActive ? 'text-dark-3' : 'text-light-1'} `} >
+                                                    <p className={`font-heading-2 font-medium text-xl z-10 ${isActive ? 'text-dark-3' : 'text-light-1'} `} >
                                                         {items.name}
                                                     </p>
                                                 </Link>
@@ -120,15 +133,15 @@ const MobileNav = () => {
                             </nav>
 
                             <SignedIn>
-                                <motion.div variants={slideVariants} className="flex gap-3 items-center flex-row flex-1 mt-2"
+                                <motion.div variants={slideVariants} className="flex gap-3 items-center flex-row flex-1 mt-10"
                                     custom={6}
                                     initial="initial"
                                     animate="enter"
                                     exit="exit" >
                                     <SignOutButton>
                                         <button className="flex text-light-2 items-center gap-2 font-medium" >
-                                            <TbLogout2 className="text-lg" />
-                                            <p className="text-sm font-ui-text-4 leading-3" > Logout </p>
+                                            <TbLogout2 className="text-2xl" />
+                                            <p className="font-ui-text-4 leading-3 text-xl" > Logout </p>
                                         </button>
                                     </SignOutButton>
                                 </motion.div>

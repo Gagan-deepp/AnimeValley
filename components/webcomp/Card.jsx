@@ -35,6 +35,22 @@ const Card = ({ data, userID }) => {
     const opacity = useTransform(scrollYProgress, [0, 1], [0.3, 1])
     const scale = useTransform(scrollYProgress, [0, 1], [0.2, 1])
 
+    const variants = {
+        initial: {
+            opacity: "0",
+            y: "100%",
+        },
+        animate: (i) => ({
+            opacity: "1",
+            y: 0,
+            transition: {
+                delay: i * 0.05,
+                duration: 0.75,
+                ease: [0.65, 0, 0.35, 1],
+            }
+        }),
+    }
+
     useEffect(() => {
         const lenis = new Lenis()
         function raf(time) {
@@ -51,8 +67,10 @@ const Card = ({ data, userID }) => {
                 <div className="embla2__container h-full">
                     {data?.map((anime, index) => (
 
-                        <motion.div key={index} className='flex w-full h-full justify-center rounded-2xl embla2__slide flex-col relative overflow-hidden' style={{ opacity, scale, transformOrigin: "bottom center" }}
-                            transition={{ ease: [0.65, 0, 0.35, 1], delay: index * 5 }}
+                        <motion.div key={index} className='flex w-full h-full justify-center rounded-2xl embla2__slide flex-col relative overflow-hidden' variants={variants} style={{ transformOrigin: "bottom center" }}
+                            initial="initial"
+                            whileInView="animate"
+                            custom={index}
                         >
 
                             <div className='w-full h-full relative bg-mainColor-2 rounded-3xl' >

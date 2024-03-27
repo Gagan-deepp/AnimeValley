@@ -149,14 +149,47 @@ export const mobileNavItem = [
         ActiveimgURL: "/assest/homeActive.svg",
     },
 ]
+export const bottomNavItem = [
+    {
+        name: 'Home',
+        href: '/',
+        imgURL: "/assest/home.svg",
+        ActiveimgURL: "/assest/homeActive.svg",
+    },
+    {
+        name: 'Manga',
+        href: '/manga',
+        imgURL: "/assest/bottomSearch.svg",
+        ActiveimgURL: "/assest/bottomSearchActive.svg",
+    },
+
+    {
+        name: 'Create',
+        href: '/create-talk',
+        imgURL: "/assest/bottomAdd.svg",
+        ActiveimgURL: "/assest/bottomAddActive.svg",
+    },
+    {
+        name: 'Community',
+        href: '/community',
+        imgURL: "/assest/home.svg",
+        ActiveimgURL: "/assest/homeActive.svg",
+    },
+    {
+        name: 'Profile',
+        href: '/profile',
+        imgURL: "/assest/profile.svg",
+        ActiveimgURL: "/assest/profileActive.svg",
+    },
+]
 
 export const ProfileTabs = [
-    { value : "Talks" , name: "Talks" , img  : "/assest/bio.svg"},
-    { value : "Replies" , name: "Replies" , img  : "/assest/profile.svg"},
-    { value : "Bookmarks" , name: "Bookmarks" , img  : "/assest/tag.svg"},
+    { value: "Talks", name: "Talks", img: "/assest/bio.svg" },
+    { value: "Replies", name: "Replies", img: "/assest/profile.svg" },
+    { value: "Bookmarks", name: "Bookmarks", img: "/assest/tag.svg" },
 ]
 export const CommunityTabs = [
-    { value : "talks" , name: "Talks" , img  : "/assest/bio.svg"},
-    { value : "members" , name: "Members" , img  : "/assest/profile.svg"},
-    { value : "requests" , name: "Requests" , img  : "/assest/tag.svg"},
+    { value: "talks", name: "Talks", img: "/assest/bio.svg" },
+    { value: "members", name: "Members", img: "/assest/profile.svg" },
+    { value: "requests", name: "Requests", img: "/assest/tag.svg" },
 ]

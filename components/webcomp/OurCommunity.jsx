@@ -10,7 +10,7 @@ const OurCommunity = () => {
 
     return (
 
-        <section className='slideWrapper mt-[10rem] relative pb-8' >
+        <section className='slideWrapper mt-[10rem] relative pb-12 sm:pb-8' >
             <div>
                 <h2 className='font-ui-text-4 font-bold text-3xl text-light-2' > Tales Of Our Community </h2>
             </div>
@@ -46,7 +46,7 @@ export default OurCommunity
 const Skeleton = ({ image, bg }) => (
 
     <Link href={"/community"} className="relative h-full rounded-xl flex p-4 items-center gap-3">
-        <Image src={bg} alt="test" fill className="z-[-1] rounded-xl" />
+        {/* <Image src={bg} alt="test" fill className="z-[-1] rounded-xl" /> */}
 
         {image && <div className="relative w-20 h-20" >
             <Image src={image} alt="test" fill />
@@ -76,11 +76,11 @@ const SkeletonThree = ({ image, title, bg }) => (
 const SkeletonTwo = ({ image, title }) => {
 
     return (
-        <Link href={"/community"} className="relative md:h-full h-52 rounded-xl flex p-4">
+        <Link href={"/community"} className="relative md:h-full h-52 rounded-xl flex p-4 bg-glassmorphism3 items-center justify-center">
             <Image src={"/banner/test-final.jpg"} alt="test" fill className="z-[-1] rounded-xl" />
 
 
-            <div className="flex items-center" >
+            <div className="flex items-center z-0 " >
                 {image && <div className="relative w-10 h-10" >
                     <Image src={image} alt="test" fill />
                 </div>}
@@ -90,9 +90,9 @@ const SkeletonTwo = ({ image, title }) => {
                 </div>
             </div>
 
-            <motion.div className=" absolute bottom-0 left-2 ">
+            {title && <motion.div className=" absolute bottom-0 left-2 ">
                 <p className="font-ui-text text-light-2 text-sm" > 20+ Daily Active Members </p>
-            </motion.div>
+            </motion.div>}
 
         </Link>
     )
