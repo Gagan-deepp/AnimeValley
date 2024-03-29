@@ -1,8 +1,9 @@
 'use client'
 import { motion, useScroll, useTransform } from "framer-motion"
 import Image from "next/image";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { ScrollArea } from "../ui/scroll-area";
+import Lenis from "@studio-freight/lenis";
 
 const BookMarkCard = ({ data }) => {
 
@@ -11,15 +12,25 @@ const BookMarkCard = ({ data }) => {
     const opacity = useTransform(scrollYProgress, [0, 1], [0.3, 1])
     const scale = useTransform(scrollYProgress, [0, 1], [0.2, 1])
 
+    useEffect(() => {
+        const lenis = new Lenis()
+        function raf(time) {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+        }
+
+        requestAnimationFrame(raf)
+    }, [])
+
     return (
         <motion.section ref={targetContainer}>
 
-            <ScrollArea className="mb-2 h-[90vh] bg-mainColor-2 p-4 rounded-2xl" >
+            <ScrollArea className="mb-2 h-[90vh] bg-mainColor-2 py-4 px-2 rounded-2xl my-4" >
                 <div className="h-full" >
-                    <div className="h-full grid grid-cols-2 sm:grid-cols-4">
+                    <div className="h-full grid grid-cols-2 sm:grid-cols-4 gap-4">
                         {JSON.parse(data).map((anime, index) => (
 
-                            <motion.div key={index} className='flex w-full h-[23rem] justify-center rounded-2xl flex-col relative overflow-hidden' style={{ opacity, scale, transformOrigin: "bottom center" }}
+                            <motion.div key={index} className='flex w-full h-[15rem] justify-center rounded-2xl flex-col relative overflow-hidden' style={{ opacity, scale, transformOrigin: "bottom center" }}
                                 transition={{ ease: [0.65, 0, 0.35, 1], delay: index * 0.1 }}
                             >
 
@@ -31,7 +42,7 @@ const BookMarkCard = ({ data }) => {
                                         className=' rounded-[2rem] rounded-t-[4.5rem] px-2 pb-2 pt-12'
                                     />
 
-                                    <h2 className="font-semibold font-ui-text text-light-2 line-clamp-1 w-full text-base absolute top-0 pl-4 pt-4 ">
+                                    <h2 className="font-semibold font-ui-text text-light-2 line-clamp-1 w-full text-sm absolute top-0 pl-4 pt-4 ">
                                         {anime.name}
                                     </h2>
 

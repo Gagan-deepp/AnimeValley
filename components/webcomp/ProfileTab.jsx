@@ -6,7 +6,7 @@ import ProfileBookMark from "./ProfileBookMark"
 
 const ProfileTab = ({ length, accountType, accountId, currentUserId }) => {
     return (
-        <div >
+        <div className="sm:mt-0 mt-[50vh]">
             <Tabs className="w-full rounded-2xl" defaultValue="talks" >
 
                 <TabsList className="tab rounded-2xl" >

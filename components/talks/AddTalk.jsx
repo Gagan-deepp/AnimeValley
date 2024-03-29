@@ -28,7 +28,7 @@ const AddTalk = () => {
     }, [query])
 
     return (
-        <div className='flex gap-8 w-full justify-between' >
+        <div className=' hidden sm:flex gap-8 w-full justify-between' >
             <div className='bg-[#1f1d33] text-gray-1 px-4 py-2 flex items-center md:w-[70%] w-[50%] rounded-3xl gap-4'>
 
                 <div className='flex flex-1' >

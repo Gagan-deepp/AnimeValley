@@ -95,7 +95,7 @@ const MobileNav = () => {
                                 </div>
                             </SignedOut>
 
-                            <div className="w-full h-[0.1rem] bg-light-1 mt-8 mb-5" />
+                            <div className="w-full h-[0.1rem] bg-light-1 mt-5 mb-5" />
 
                             <nav>
                                 <ul className='flex flex-col gap-5' >
