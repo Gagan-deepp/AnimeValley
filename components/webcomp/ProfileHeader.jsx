@@ -4,8 +4,8 @@ import Link from "next/link"
 const ProfileHeader = ({ user, accountType }) => {
     return (
         <div className="sm:relative absolute top-0 left-0 right-0 sm:h-fit h-[50vh]" >
-            <div className="p-4 sm:h-[10rem] h-1/2 relative rounded-b-[5rem] sm:rounded-3xl">
-                <Image src={"/banner/profile.webp"} alt="Profile_banner" fill className=" rounded-b-3xl sm:rounded-[5rem]" />
+            <div className="p-4 sm:h-[10rem] h-2/3 relative rounded-b-[5rem] sm:rounded-3xl">
+                <Image src={"/banner/profile.webp"} alt="Profile_banner" fill className=" rounded-b-3xl sm:rounded-3xl" />
                 <div className="absolute right-4 top-10 sm:hidden inline-block" >
                     <div >
                         {user.Clerkid === user.Mongoid && accountType === 'User' && (<Link href={"/profile/edit"} className=" bg-light-2 p-2 rounded-2xl flex gap-2 font-semibold font-heading-2 cursor-pointer" >
@@ -16,7 +16,7 @@ const ProfileHeader = ({ user, accountType }) => {
             </div>
 
             <div className="flex flex-col sm:items-start items-center gap-24 sm:flex-row sm:gap-4 px-12 relative h-12" >
-                <div className="relative w-[7rem]" >
+                <div className="relative w-full sm:w-[7rem] flex-center" >
                     <div className="absolute top-[-68px]" >
                         <div className="sm:w-24 sm:h-24 w-36 h-36 relative rounded-2xl " >
                             <Image src={user.image} alt={user.name} fill className="rounded-2xl" />

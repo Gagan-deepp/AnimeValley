@@ -71,7 +71,7 @@ const TalkCard = ({ id, currentUserId, parentId, content, author, community, cre
           </div>
           <Link href={`/community/talk/${id}`} className='flex items-center gap-2' >
             <BiMessageSquareDetail className='text-[20px]' />
-            <p> {comments.length} Repl{comments.length > 1 ? 'ies' : 'y'}  </p>
+            <p> {comments.length} </p>
           </Link>
         </div>
 
