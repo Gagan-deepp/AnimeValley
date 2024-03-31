@@ -64,15 +64,15 @@
 
   /* bg-[#1f2035] */
   .leftsidebar {
-    @apply absolute left-0 top-0 z-[5] flex h-screen w-fit pr-4 flex-col items-center gap-4 overflow-auto pb-5 pl-6 pt-4 max-md:hidden;
+    @apply absolute left-0 top-0 z-[5] flex h-[100dvh] w-fit pr-4 flex-col items-center gap-4 overflow-auto pb-5 pl-6 pt-4 max-md:hidden;
   }
 
   .main-container {
-    @apply flex min-h-screen w-full md:w-[90%] m-auto flex-1 flex-col items-center sm:px-6 px-6 sm:pb-10 pt-5 max-md:pb-5 ;
+    @apply flex min-h-[100dvh] w-full md:w-[90%] m-auto flex-1 flex-col items-center sm:px-6 px-6 sm:pb-10 pt-5 max-md:pb-5 ;
   }
 
   .rightsidebar {
-    @apply sticky right-0 top-0 z-[5] flex h-screen w-fit flex-col justify-between gap-12 overflow-hidden px-4 pb-6 pt-4 mt-8;
+    @apply sticky right-0 top-0 z-[5] flex h-[100dvh] w-fit flex-col justify-between gap-12 overflow-hidden px-4 pb-6 pt-4 mt-8;
   }
 
   .rightsidebarAdj {

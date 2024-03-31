@@ -16,7 +16,7 @@ const MotionDiv = ({ children }) => {
 
 
     return (
-        <motion.div layoutId="animeBg" className="relative w-full h-screen " ref={targetRef} style={{ opacity }}>
+        <motion.div layoutId="animeBg" className="relative w-full h-[100dvh] " ref={targetRef} style={{ opacity }}>
             <motion.div style={{ position }} className=" fixed top-0 left-0 right-0 w-full h-full ">
                 {children}
             </motion.div>

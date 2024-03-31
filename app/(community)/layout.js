@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
         <ClerkProvider>
             <html lang="en">
                 <body className={`${inter.className} max-w-[100vw] overflow-x-hidden`}>
-                    <div className="flex min-h-screen flex-col relative w-full" >
+                    <div className="flex min-h-[100dvh] flex-col relative w-full" >
                         <Leftsidebar />
                         <main className="flex-1 bg-[#383143] w-full" >
                             <section className='' >

@@ -7,8 +7,6 @@ import { useEffect, useRef, useState } from "react";
 import Lenis from "@studio-freight/lenis";
 
 const AnimeDetail = ({ anime, bookMarkerd }) => {
-    console.log(anime)
-    console.log(bookMarkerd)
 
     useEffect(() => {
         const lenis = new Lenis()
@@ -149,10 +147,13 @@ const AnimeDetail = ({ anime, bookMarkerd }) => {
 
             <div>
                 <div>
-                    <button className="no-focus w-full h-10 bg-form_bg font-ui-text-3 relative text-xl font-bold flex-center gap-3 " disabled={bookMarkerd}  >
+                    <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.9 }}
+                        className="no-focus w-full h-10 bg-form_bg font-ui-text-3 relative text-xl font-bold flex-center gap-3 " disabled={bookMarkerd}  >
                         {bookMarkerd ? "Already BookMarked" : "Add To BookMark"}
                         <Image src={"/assest/bookmark.svg"} width={18} height={25} alt='star' />
-                    </button>
+                    </motion.button>
                 </div>
             </div>
         </div>

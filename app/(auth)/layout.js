@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Inter } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 
 import "../globals.css";
 import { dark } from "@clerk/themes";
+import Lenis from "@studio-freight/lenis";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,11 +14,22 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+
+    useEffect(() => {
+        const lenis = new Lenis({ duration: 1, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) })
+        function raf(time) {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+        }
+
+        requestAnimationFrame(raf)
+    }, [])
+
     return (
         <ClerkProvider
-        appearance={{
-            baseTheme:dark
-        }}
+            appearance={{
+                baseTheme: dark
+            }}
         >
             <html lang='en'>
                 <body className={`${inter.className} bg-dark-1 flex-center h-dvh`}>{children}</body>
