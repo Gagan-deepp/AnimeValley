@@ -17,6 +17,7 @@ const AnimeDetail = ({ anime, bookMarkerd }) => {
 
         requestAnimationFrame(raf)
     }, [])
+
     const trailerDiv = useRef();
     const upperDiv = useRef();
     const [hoverId, sethoverId] = useState(null);

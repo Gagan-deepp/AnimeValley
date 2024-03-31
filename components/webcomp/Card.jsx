@@ -55,13 +55,16 @@ const Card = ({ data, userID }) => {
     }, [])
 
     return (
-        <motion.section className="embla md:h-[18rem] h-[23rem]">
+        <motion.section className="embla md:h-[20rem] h-[23rem]">
             <div className="embla__viewport h-full" ref={emblaRef}>
-                <div className="embla2__container h-full">
+                <div className="embla2__container h-full p-5">
                     {data?.map((anime, index) => (
 
                         <motion.div key={index} className='flex w-full h-full justify-center rounded-2xl embla2__slide flex-col relative overflow-hidden' variants={variants} style={{ transformOrigin: "bottom center" }}
                             initial="initial"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            transition={{ ease: [0.85, 0, 0.15, 1] ,duration: 0.3 }}
                             whileInView="animate"
                             custom={index}
                         >

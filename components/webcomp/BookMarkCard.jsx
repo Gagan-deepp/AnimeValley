@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { ScrollArea } from "../ui/scroll-area";
 import Lenis from "@studio-freight/lenis";
+import Link from "next/link";
 
 const BookMarkCard = ({ data }) => {
 
@@ -13,7 +14,7 @@ const BookMarkCard = ({ data }) => {
     const scale = useTransform(scrollYProgress, [0, 1], [0.2, 1])
 
     useEffect(() => {
-        const lenis = new Lenis()
+        const lenis = new Lenis({ duration: 1 })
         function raf(time) {
             lenis.raf(time)
             requestAnimationFrame(raf)
@@ -34,29 +35,31 @@ const BookMarkCard = ({ data }) => {
                                 transition={{ ease: [0.65, 0, 0.35, 1], delay: index * 0.1 }}
                             >
 
-                                <div className='w-full h-full relative bg-glassmorphism2 rounded-3xl' >
-                                    <Image
-                                        src={anime.image}
-                                        alt={anime.name}
-                                        fill
-                                        className=' rounded-[2rem] rounded-t-[4.5rem] px-2 pb-2 pt-12'
-                                    />
+                                <Link href={`/anime/${anime.animeID}`} className='w-full h-full bg-glassmorphism2 rounded-3xl' >
+                                    <div className='w-full h-full relative rounded-3xl' >
+                                        <Image
+                                            src={anime.image}
+                                            alt={anime.name}
+                                            fill
+                                            className=' rounded-[2rem] rounded-t-[4.5rem] px-2 pb-2 pt-12'
+                                        />
 
-                                    <h2 className="font-semibold font-ui-text text-light-2 line-clamp-1 w-full text-sm absolute top-0 pl-4 pt-4 ">
-                                        {anime.name}
-                                    </h2>
+                                        <h2 className="font-semibold font-ui-text text-light-2 line-clamp-1 w-full text-sm absolute top-0 pl-4 pt-4 ">
+                                            {anime.name}
+                                        </h2>
 
-                                    <div className="flex gap-3 z-[1] absolute bottom-[9px] left-0 text-ellipsis whitespace-nowrap px-3 items-end">
-                                        <div>
-                                            <p className="text-white rounded-3xl text-xs font-bold items-center flex bg-glassmorphism2 backdrop-blur-xl px-3 py-1 gap-2">
-                                                {anime.status}
-                                                <span className='bg-dark-4 rounded-full p-2 ' >
-                                                    <Image src={"/assest/star.svg"} width={14} height={14} alt='star' />
-                                                </span>
-                                            </p>
+                                        <div className="flex gap-3 z-[1] absolute bottom-[9px] left-0 text-ellipsis whitespace-nowrap px-3 items-end">
+                                            <div>
+                                                <p className="text-white rounded-3xl text-xs font-bold items-center flex bg-glassmorphism2 backdrop-blur-xl px-3 py-1 gap-2">
+                                                    {anime.status}
+                                                    <span className='bg-dark-4 rounded-full p-2 ' >
+                                                        <Image src={"/assest/star.svg"} width={14} height={14} alt='star' />
+                                                    </span>
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </Link>
 
 
                             </motion.div>

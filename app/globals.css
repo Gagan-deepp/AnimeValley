@@ -72,7 +72,7 @@
   }
 
   .rightsidebar {
-    @apply sticky right-0 top-0 z-[5] flex h-[100dvh] w-fit flex-col justify-between gap-12 overflow-hidden px-4 pb-6 pt-4 mt-8;
+    @apply sticky right-0 top-0 z-[5] flex h-fit w-fit flex-col justify-between gap-12 overflow-hidden px-4 pb-6 pt-4 mt-8;
   }
 
   .rightsidebarAdj {
