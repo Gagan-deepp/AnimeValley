@@ -55,7 +55,7 @@ const Card = ({ data, userID }) => {
     }, [])
 
     return (
-        <motion.section className="embla md:h-[20rem] h-[23rem]">
+        <motion.div className="embla md:h-[20rem] h-[23rem]">
             <div className="embla__viewport h-full" ref={emblaRef}>
                 <div className="embla2__container h-full p-5">
                     {data?.map((anime, index) => (
@@ -118,7 +118,7 @@ const Card = ({ data, userID }) => {
 
                 </div>
             </div>
-        </motion.section>
+        </motion.div>
     )
 }
 
