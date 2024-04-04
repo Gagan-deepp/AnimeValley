@@ -8,8 +8,10 @@ export default function Home() {
       <MainSlider />
 
       <div className="slideWrapper flex flex-col gap-36">
-        <TopContent title="Top Anime Picks" />
-        <TopContent page={'second'} title="All Time Favourites" />
+        <TopContent page={'second'} title="All Time Favourites" type="anime" />
+        <TopContent title="Top Anime Picks" type="anime" />
+        <TopContent page={'third'} title="Timeless Manga Gems" type="manga" />
+        <TopContent page={'fourth'} title="Harmony of Anime Hits" type="anime" />
       </div>
 
       <OurCommunity />

@@ -37,10 +37,11 @@ const MainSlider = () => {
                                 <div className={`h-full w-full relative after:bg-bg-shadow after:absolute after:bottom-0 after:left-0 after:z-10 after:right-0 after:h-full after:w-full after:mix-blend-soft-light`}>
 
                                     <div className='h-full w-full relative rounded-2xl'>
-                                        <Image src={imgs.src} alt={imgs.alt} fill className='h-full w-full object-cover rounded-2xl' />
+                                        <Image src={imgs.src} alt={imgs.alt} fill className='h-full w-full hidden object-cover md:flex rounded-2xl ' />
+                                        <Image src={imgs.small} alt={imgs.alt} fill className='h-full w-full flex object-contain md:hidden rounded-2xl ' />
                                     </div>
 
-                                    <div className='absolute top-[5%] left-14 z-[1] w-96 h-32 sm:block hidden'>
+                                    <div className='absolute top-[5%] left-14 z-[1] w-96 h-32 md:block hidden'>
                                         <div className='w-full h-full'>
                                             <Image src={imgs.logo} alt={imgs.alt} fill className='' />
                                         </div>

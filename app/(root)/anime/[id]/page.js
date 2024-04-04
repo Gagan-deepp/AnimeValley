@@ -10,7 +10,7 @@ const page = async ({ params }) => {
     const user = await currentUser();
     if (!user) return null;
 
-    let random = Math.floor(Math.random() * 9)
+    let random = Math.floor(Math.random() * 4)
 
     const animeData = await fetchAnimeData(params.id);
     const animeImg = await fetchAnimeImage(params.id);

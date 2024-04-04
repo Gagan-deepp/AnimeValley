@@ -73,11 +73,11 @@ const SkeletonThree = ({ image, title, bg }) => (
 
     </Link>
 );
-const SkeletonTwo = ({ image, title }) => {
+const SkeletonTwo = ({ image, title, bg }) => {
 
     return (
         <Link href={"/community"} className="relative md:h-full h-52 rounded-xl flex p-4 bg-glassmorphism3 items-center justify-center">
-            <Image src={"/banner/test-final.jpg"} alt="test" fill className="z-[-1] rounded-xl" />
+            <Image src={bg} alt="test" fill className="z-[-1] rounded-xl" />
 
 
             <div className="flex items-center z-0 " >
@@ -103,11 +103,11 @@ const items = [
         className: "md:col-span-2",
     },
     {
-        header: <SkeletonTwo image={"/assest/profile.svg"} title={"20+"} />,
+        header: <SkeletonTwo image={"/assest/profile.svg"} bg={"/banner/test-final.jpg"} title={"20+"} />,
         className: "md:col-span-1",
     },
     {
-        header: <SkeletonTwo />,
+        header: <SkeletonTwo bg={"/banner/comm.png"} />,
         className: "md:col-span-1",
     },
     {

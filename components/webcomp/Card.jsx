@@ -9,7 +9,7 @@ import { addBookMarkUser } from '@/lib/actions/user.actions'
 import { toast } from 'sonner'
 import Link from 'next/link'
 
-const Card = ({ data, userID }) => {
+const Card = ({ data, userID, type }) => {
 
     const pathname = usePathname()
     const handleBookMark = async ({ animeID, title, airing, status, image }) => {
@@ -55,7 +55,7 @@ const Card = ({ data, userID }) => {
     }, [])
 
     return (
-        <motion.div className="embla md:h-[20rem] h-[23rem]">
+        <motion.div className="embla md:h-[20rem] h-[23rem] ">
             <div className="embla__viewport h-full" ref={emblaRef}>
                 <div className="embla2__container h-full p-5">
                     {data?.map((anime, index) => (
@@ -64,12 +64,12 @@ const Card = ({ data, userID }) => {
                             initial="initial"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            transition={{ ease: [0.85, 0, 0.15, 1] ,duration: 0.3 }}
+                            transition={{ ease: [0.85, 0, 0.15, 1], duration: 0.3 }}
                             whileInView="animate"
                             custom={index}
                         >
 
-                            <Link href={`/anime/${anime.mal_id}`} className='w-full h-full bg-mainColor-2 rounded-3xl' >
+                            <Link href={`/${type}/${anime.mal_id}`} className='w-full h-full bg-mainColor-2 rounded-3xl' >
                                 <div className='w-full h-full relative rounded-3xl' >
                                     <motion.div layout="animeBg" className='w-full h-full relative rounded-3xl' >
                                         <Image
@@ -94,8 +94,8 @@ const Card = ({ data, userID }) => {
                                             </p>
                                         </div>
                                         {userID && <div>
-                                            <p className="items-center flex">
-                                                <motion.span
+                                            <div className="items-center flex">
+                                                <motion.div
                                                     whileHover={{ scale: 1.1 }}
                                                     whileTap={{ scale: 0.9 }}
                                                     className='bg-light-2 rounded-full px-3 py-3 cursor-pointer' onClick={() => handleBookMark({
@@ -106,8 +106,8 @@ const Card = ({ data, userID }) => {
                                                         image: anime.images.webp.large_image_url,
                                                     })}  >
                                                     <Image src={"/assest/bookmark.svg"} width={18} height={22} alt='star' />
-                                                </motion.span>
-                                            </p>
+                                                </motion.div>
+                                            </div>
                                         </div>}
                                     </div>
                                 </div>

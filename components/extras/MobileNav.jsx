@@ -75,7 +75,7 @@ const MobileNav = () => {
                                     <UserButton afterSignOutUrl='/' appearance={{
                                         baseTheme: dark,
                                         elements: {
-                                            avatarBox: "w-16 h-16"
+                                            avatarBox: "w-12 h-12"
                                         }
                                     }} />
                                     <p className="text-light-2 font-semibold font-ui-text-4" > @{user.username} </p>
@@ -95,7 +95,7 @@ const MobileNav = () => {
                                 </div>
                             </SignedOut>
 
-                            <div className="w-full h-[0.1rem] bg-light-1 mt-5 mb-5" />
+                            <div className="w-full min-h-[0.1rem] bg-light-1 mt-5 mb-5" />
 
                             <nav>
                                 <ul className='flex flex-col gap-5' >
@@ -114,7 +114,7 @@ const MobileNav = () => {
                                                 key={index} className={`cursor-pointer text-slate-600 relative flex items-start`} >
 
                                                 <Link href={items.href} className="flex gap-4 items-center p-2" title={items.name} >
-                                                    {isActive && <motion.span layoutId='navBg' className='bg-dark-3 absolute top-1/2 right-0 h-3 rounded-full w-3' />}
+                                                    {isActive && <motion.span layoutId='navBg' className='bg-dark-3 absolute top-1/3 right-0 h-3 rounded-full w-3' />}
                                                     <Image
                                                         src={isActive ? items.ActiveimgURL : items.imgURL}
                                                         alt={items.name}
@@ -123,7 +123,7 @@ const MobileNav = () => {
                                                         className='z-10'
                                                     />
 
-                                                    <p className={`font-heading-2 font-medium text-xl z-10 ${isActive ? 'text-dark-3' : 'text-light-1'} `} >
+                                                    <p className={`font-heading-2 font-medium text-base z-10 ${isActive ? 'text-dark-3' : 'text-light-1'} `} >
                                                         {items.name}
                                                     </p>
                                                 </Link>

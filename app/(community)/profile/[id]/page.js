@@ -28,7 +28,7 @@ const page = async ({ params }) => {
     <section className='main-container items-start sm:px-6 px-4' >
       <AddTalk />
       <div className="w-full" >
-        <div className="w-full flex gap-6" >
+        <div className="w-full flex gap-10" >
           <div className="flex-1 sm:mt-8 flex flex-col gap-4" >
             <h3 className="heading-new sm:flex hidden" > Whispers of Identity </h3>
 

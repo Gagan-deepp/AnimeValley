@@ -27,7 +27,7 @@ const Leftsidebar = () => {
         </Link>
       </div>
 
-      <div className='mt-4'>
+      <div className='mt-4 sticky top-6'>
 
         <ul className='flex flex-col gap-8' >
           {sideBarItem.map((items, index) => {

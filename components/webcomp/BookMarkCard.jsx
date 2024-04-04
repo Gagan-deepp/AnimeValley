@@ -10,8 +10,7 @@ const BookMarkCard = ({ data }) => {
 
     const targetContainer = useRef();
     const { scrollYProgress } = useScroll({ target: targetContainer, offset: ["start end", "start center"] })
-    const opacity = useTransform(scrollYProgress, [0, 1], [0.3, 1])
-    const scale = useTransform(scrollYProgress, [0, 1], [0.2, 1])
+    const opacity = useTransform(scrollYProgress, [0.5, 1], [0.3, 1])
 
     useEffect(() => {
         const lenis = new Lenis({ duration: 1 })
@@ -31,8 +30,8 @@ const BookMarkCard = ({ data }) => {
                     <div className="h-full grid grid-cols-2 sm:grid-cols-4 gap-4">
                         {JSON.parse(data).map((anime, index) => (
 
-                            <motion.div key={index} className='flex w-full h-[15rem] justify-center rounded-2xl flex-col relative overflow-hidden' style={{ opacity, scale, transformOrigin: "bottom center" }}
-                                transition={{ ease: [0.65, 0, 0.35, 1], delay: index * 0.1 }}
+                            <motion.div key={index} className='flex w-full h-[18rem] justify-center rounded-2xl flex-col relative overflow-hidden' style={{ opacity, transformOrigin: "bottom center" }}
+                                transition={{ ease: [0.65, 0, 0.35, 1], delay: index * 5 }}
                             >
 
                                 <Link href={`/anime/${anime.animeID}`} className='w-full h-full bg-glassmorphism2 rounded-3xl' >
