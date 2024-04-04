@@ -1,4 +1,4 @@
-import { fetchPopularLightNovel, fetchPopularManhwa, fetchPopularmanga, fetchUpmanga } from '@/lib/actions/fetch.action'
+import { fetchPopularLightNovel, fetchPopularManhua, fetchPopularManhwa, fetchPopularmanga } from '@/lib/actions/fetch.action'
 import Card from './Card'
 import Arrow from '../extras/Arrow';
 import { currentUser } from '@clerk/nextjs';
@@ -9,7 +9,7 @@ const MangaContent = async ({ page, title, type }) => {
     if (page === 'second') {
         response = await fetchPopularManhwa(1)
     } else if (page === 'third') {
-        response = await fetchUpmanga(1)
+        response = await fetchPopularManhua(1)
     }
     else if (page === 'fourth') {
         response = await fetchPopularLightNovel(1)
