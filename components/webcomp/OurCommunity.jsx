@@ -103,7 +103,7 @@ const items = [
         className: "md:col-span-2",
     },
     {
-        header: <SkeletonTwo image={"/assest/profile.svg"} bg={"/banner/test-final.jpg"} title={"20+"} />,
+        header: <SkeletonTwo image={"/assest/profile.svg"} bg={"/banner/test.png"} title={"20+"} />,
         className: "md:col-span-1",
     },
     {
