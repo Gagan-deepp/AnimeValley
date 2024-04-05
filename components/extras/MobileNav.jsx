@@ -61,7 +61,7 @@ const MobileNav = () => {
 
             <AnimatePresence mode="wait" >
                 {isOpen &&
-                    <motion.div className="h-[80vh] w-[80vw] bg-gray-4 fixed top-10 left-0 rounded-tr-3xl rounded-br-3xl box-border"
+                    <motion.div className="h-[80vh] w-[80vw] bg-gray-4 fixed top-6 left-0 rounded-tr-3xl rounded-br-3xl box-border"
                         variants={variants} initial="initial" animate="animate" exit="exit" >
 
                         <div className="px-8 py-10 box-border flex flex-col relative justify-between h-full" >

@@ -4,6 +4,8 @@ import jjk_small from '@/public/banner/jjk_small.jpg'
 import spy_small from '@/public/banner/spy_small.jpg'
 import haikyuu from '@/public/banner/haikyuu_small.jpg'
 import blue from '@/public/banner/blue_small.jpg'
+import deathNote from '@/public/banner/death_small.jpg'
+import kake from '@/public/banner/kake_small.webp'
 import first from '@/public/banner/pic3.jpg'
 import firstLogo from '@/public/banner/logo5.png'
 import second from '@/public/banner/pic4.jpg'
@@ -44,7 +46,7 @@ export const sildeImgs = [
 
     {
         src: second, alt: 'second', logo: secondLogo,
-        small: spy_small,
+        small: deathNote,
         year: '2006',
         name: 'Deathnote', desc: "An intelligent high school student goes on a secret crusade to eliminate criminals from the world after discovering a notebook capable of killing anyone whose name is written into it."
     },
@@ -65,7 +67,7 @@ export const sildeImgs = [
 
     {
         src: seventh, alt: 'seven', logo: sevenLogo,
-        small: blue,
+        small: kake,
         year: '2017',
         name: "Kakegurui", desc: "High roller Yumeko Jabami plans to clean house at Hyakkaou Private Academy, a school where students are evaluated solely on their gambling skills."
     },

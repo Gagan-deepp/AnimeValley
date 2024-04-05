@@ -27,7 +27,7 @@ const AnimeDetail = ({ anime, bookMarkerd }) => {
     const { scrollYProgress } = useScroll({ target: trailerDiv, offset: ["start end", "end end"] })
     const upperRes = useScroll({ target: upperDiv, offset: ["start end", "end start"] })
     const x = useTransform(scrollYProgress, [0, 1], ["-30%", "0%"])
-    const y = useTransform(upperRes.scrollYProgress, [0, 0.65, 1], ["95%", "0%", "100%"])
+    const y = useTransform(upperRes.scrollYProgress, [0, 0.5, 0.8, 1], ["95%", "0%", "0%", "100%"])
     const trailerY = useTransform(scrollYProgress, [0, 1], ["100%", "0%"])
     const opacity = useTransform(scrollYProgress, [0, 0.9], [0, 1])
 
@@ -51,7 +51,9 @@ const AnimeDetail = ({ anime, bookMarkerd }) => {
             <motion.div ref={upperDiv} className="flex flex-col gap-4 overflow-hidden md:gap-7" >
                 <div className="flex gap-4 items-center" >
                     <h3 className="font-heading-2 font-semibold text-light-2 text-lg md:text-2xl" > Name : </h3>
-                    <p className="font-ui-text-3 font-bold text-light-3" > <span className="bg-button-bg text-transparent bg-clip-text" > {anime.title_english} </span> | {anime.title} </p>
+                    <p className="font-ui-text-3 font-bold text-light-3" > <span className="bg-button-bg text-transparent bg-clip-text" > {anime.title_english} </span> | {anime.title}
+                        <span className="text-2xl font-ui-text md:inline hidden" > ({anime.year}) </span>
+                    </p>
                 </div>
 
                 <div className="flex gap-4 items-center overflow-hidden " >
@@ -94,7 +96,7 @@ const AnimeDetail = ({ anime, bookMarkerd }) => {
             <div className="w-full h-[0.1rem] bg-glassmorphism" />
 
             <motion.div ref={trailerDiv} className="flex flex-col gap-7 overflow-hidden" >
-                <motion.div style={{ x, opacity }} className="flex flex-col gap-3 relative" >
+                <motion.div style={{ x, opacity }} className="md:hidden flex flex-col gap-3 relative " >
 
                     <motion.h3 transition={{ delay: 0.1 }} style={{ opacity, x, transformOrigin: "left center" }} className="font-heading-2 font-semibold text-light-2 text-lg flex gap-3 items-center md:text-2xl" >
                         <span className='bg-dark-4 rounded-full p-2 ' >
@@ -167,7 +169,7 @@ const AnimeDetail = ({ anime, bookMarkerd }) => {
                 <div>
                     <div>
                         <motion.button
-                            whileHover={{ scale: [1.04, 1.01, 1.05, 1.01] }}
+                            whileHover={{ scale: [1.04] }}
                             whileTap={{ scale: 0.97 }}
                             className="no-focus w-full h-10 bg-form_bg font-ui-text-3 relative text-xl font-bold flex-center gap-3 " disabled={bookMarkerd}
                             onClick={() => handleBookMark({

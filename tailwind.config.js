@@ -34,7 +34,7 @@ module.exports = {
         'button-bg': `linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%)`,
         'card-shadow': `linear-gradient(to bottom, transparent 0%, black 100%)`,
         'bg-main': `radial-gradient(343px at 46.3% 47.5%, rgb(242, 242, 242) 0%, rgb(241, 241, 241) 72.9%);`,
-        'bg-shadow': `linear-gradient(180deg,#0000,#0003 20%,#0009 56%,#101012)`,
+        'bg-shadow': `radial-gradient(circle farthest-side, transparent 65%, #060d17), linear-gradient(0deg, #060d17, transparent 60px);`,
 
         'button-hover': `linear-gradient(to right, #ffafbd, #ffc3a0)`,
         'form_bg': 'linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);',
