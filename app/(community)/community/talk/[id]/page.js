@@ -42,6 +42,7 @@ const page = async ({ params }) => {
                             community={talk.community}
                             createdAt={talk.createdAt}
                             comments={talk.children}
+                            isComment={false}
                         />
 
                         <div className="w-full" >
@@ -72,7 +73,9 @@ const page = async ({ params }) => {
                             </div>
                         </div>
                     </div>
-                    <Rightsidebar />
+                    <div className="xl:flex hidden" >
+                        <Rightsidebar />
+                    </div>
                 </div>
             </div>
         </section>

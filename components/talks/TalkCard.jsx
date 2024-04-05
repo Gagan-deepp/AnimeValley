@@ -3,11 +3,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { BiMessageSquareDetail } from "react-icons/bi";
 import TalkBtn from './TalkBtn';
+import Setting from '../extras/Setting';
 
 
 const TalkCard = ({ id, currentUserId, parentId, content, author, community, createdAt, comments, isComment, heading }) => {
-
   const testDate = dateFormat(createdAt)
+
   return (
     <article className={`w-[95%] relative ${isComment ? 'p-4 px-4 xs:px-7 bg-color-comment gap-3 ' : 'gap-3 bg-[#5b5464] sm:px-8 px-6 pt-6 pb-6 hover:bg-card-bg-hover hover:scale-[1.01]'}  flex flex-col  my-4 rounded-[2rem]  duration-300 cursor-pointer ease-in-out `} >
 
@@ -28,7 +29,9 @@ const TalkCard = ({ id, currentUserId, parentId, content, author, community, cre
                 {community}
               </p>
               : ""}
-            <p className='text-gray-3 text-base lowercase font-ui-text-2 ' > @{author.name} </p>
+            <p className='text-gray-3 text-base lowercase font-ui-text-2 ' > @{author.userName} </p>
+
+            <Setting id={JSON.stringify(id)} currentUserId={currentUserId} authorID={author.id} isComment={isComment} />
           </div>
         </div>
 

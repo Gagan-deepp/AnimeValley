@@ -32,7 +32,7 @@ const Leftsidebar = () => {
         <ul className='flex flex-col gap-8' >
           {sideBarItem.map((items, index) => {
 
-            const isActive = pathname == items.href
+            const isActive = pathname.includes(items.href)
             if (items.href === "/profile") items.href = `${items.href}/${userId}`;
 
             return (

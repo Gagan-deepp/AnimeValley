@@ -16,7 +16,7 @@ const BottomNav = () => {
                 <ul className='flex justify-around gap-5 flex-1' >
                     {bottomNavItem.map((items, index) => {
 
-                        const isActive = pathname == items.href
+                        const isActive = pathname.includes(items.href)
                         if (items.href === "/profile") items.href = `${items.href}/${userId}`;
 
                         return (

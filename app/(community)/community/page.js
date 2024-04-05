@@ -12,7 +12,7 @@ const page = async ({ searchParams }) => {
 
   const user = await currentUser()
 
-  const resultPost = await fetchPost({ searchText: searchParams.search ? searchParams.search : "", pageNo: 1, pageSize: 4 });
+  const resultPost = await fetchPost({ searchText: searchParams.search ? searchParams.search : "", pageNo: 1, pageSize: 5 });
   return (
     <div className='main-container' >
       <AddTalk />

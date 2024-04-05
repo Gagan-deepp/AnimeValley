@@ -6,22 +6,14 @@ import { usePathname } from "next/navigation"
 const TalkBtn = ({ id, currentUserId, authorName, authorID, isComment }) => {
     const pathname = usePathname();
 
-    // if () return null;
-
     return (
-        <div className='smflex gap-4 items-center hidden' >
+        <div className='sm:flex gap-4 items-center hidden' >
             <p className='text-gray-3 text-base lowercase font-ui-text-2' > @{authorName} </p>
-            {currentUserId !== authorID || pathname === "/" && (< div className='flex self-start hover:scale-[1.1] duration-150 ease-in-out p-2 rounded-full bg-gray-5'
+            {currentUserId === authorID && (< div className='flex self-start hover:scale-[1.1] duration-150 ease-in-out p-2 rounded-full bg-gray-5'
                 onClick={async () => {
                     await deleteTalk(JSON.parse(id), pathname)
-                }}
-            >
-                <Image
-                    src={'/assest/delete.svg'}
-                    alt='share'
-                    width={20}
-                    height={20}
-                />
+                }}>
+                <Image src={'/assest/delete.svg'} alt='share' width={20} height={20} />
             </div>)}
             {
                 !isComment &&

@@ -78,7 +78,7 @@ const MobileNav = () => {
                                             avatarBox: "w-12 h-12"
                                         }
                                     }} />
-                                    <p className="text-light-2 font-semibold font-ui-text-4" > @{user.username} </p>
+                                    <p className="text-light-2 font-semibold font-ui-text-4" > @{user?.username} </p>
                                 </div>
                             </SignedIn>
 
