@@ -4,13 +4,14 @@ import { FaPlus } from "react-icons/fa";
 import { motion, useScroll, useTransform } from "framer-motion"
 import { sildeImgs } from '@/constants/data';
 import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay'
 import { DotButton, useDotButton } from './EmblaCarouselDotButton';
 import { useEffect, useRef } from 'react';
 import Lenis from '@studio-freight/lenis'
-
+  
 const MainSlider = () => {
 
-    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay({ delay: 2500})]);
     const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(emblaApi);
     const target = useRef();
     const { scrollYProgress } = useScroll({ target: target, offset: ["end end", "end start"] })

@@ -7,7 +7,6 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 const BottomNav = () => {
-
     const pathname = usePathname();
     const { userId } = useAuth();
     return (
@@ -16,7 +15,7 @@ const BottomNav = () => {
                 <ul className='flex justify-around gap-5 flex-1' >
                     {bottomNavItem.map((items, index) => {
 
-                        const isActive = pathname.includes(items.href)
+                        const isActive = pathname === items.href
                         if (items.href === "/profile") items.href = `${items.href}/${userId}`;
 
                         return (

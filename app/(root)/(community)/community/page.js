@@ -1,7 +1,8 @@
+import { LenisDiv } from "@/components/extras/MotionDiv";
 import AddTalk from "@/components/talks/AddTalk";
 import Rightsidebar from '@/components/talks/Rightsidebar';
 import TalkCard from '@/components/talks/TalkCard';
-import { ScrollArea } from "@/components/ui/scroll-area";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { fetchPost } from '@/lib/actions/talks.action';
 import { fetchUser } from '@/lib/actions/user.actions';
 import { currentUser } from '@clerk/nextjs'
@@ -30,7 +31,7 @@ const page = async ({ searchParams }) => {
               <h1 className='font-heading-2 text-3xl font-medium flex items-center gap-2' > Whispers in Talk <TbArrowBigRightFilled />  </h1>
             </div>
 
-            <ScrollArea className="mb-2 h-[90vh] bg-[#322d37a1] p-4 rounded-2xl" >
+            <ScrollArea className="mb-2 max-h-[90vh] bg-[#322d37a1] p-4 rounded-2xl overflow-y-auto" >
               <div className="flex flex-col gap-2 items-center" >
                 {resultPost.allTalks.length === 0 ? (<p> No Talks Currently On At This Time !! </p>) : (
                   resultPost?.allTalks?.map((talk, index) => (

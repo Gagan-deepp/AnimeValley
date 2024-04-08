@@ -19,7 +19,7 @@ const Setting = ({ id, currentUserId, authorID, isComment }) => {
                     </motion.div>
                 </DrawerTrigger>
 
-                <DrawerContent className="w-[70%] min-h-[30dvh] bg-dark-1 border-none left-[15%] overflow-hidden rounded-3xl pb-5" >
+                <DrawerContent className="w-[85%] min-h-[30dvh] bg-dark-1 border-none left-[8%] overflow-hidden rounded-3xl pb-5" >
                     <div className="flex flex-col relative gap-6" >
 
                         <DrawerHeader className="flex justify-between items-center" >
@@ -33,7 +33,7 @@ const Setting = ({ id, currentUserId, authorID, isComment }) => {
 
                         <div className="px-8 flex flex-col gap-6" >
                             {currentUserId === authorID &&
-                                <div className="flex items-center cursor-pointer" >
+                                <DrawerClose className="flex items-center cursor-pointer" >
                                     < div className='flex-center gap-3'
                                         onClick={async () => {
                                             await deleteTalk(JSON.parse(id), pathname)
@@ -41,10 +41,10 @@ const Setting = ({ id, currentUserId, authorID, isComment }) => {
                                         <Image src={'/assest/delete.svg'} alt='share' width={18} height={18} />
                                         <p className="text-xl text-light-7 font-ui-text-2" > Delete </p>
                                     </div>
-                                </div>}
+                                </DrawerClose>}
                             {
                                 !isComment &&
-                                <div className='flex self-start gap-3 cursor-pointer' title="share" >
+                                <DrawerClose className='flex self-start gap-3 cursor-pointer' title="share" >
                                     <Image
                                         title="share"
                                         src={'/assest/share.svg'}
@@ -53,7 +53,7 @@ const Setting = ({ id, currentUserId, authorID, isComment }) => {
                                         height={20}
                                     />
                                     <p className="text-xl text-light-7 font-ui-text-2" > Share </p>
-                                </div>
+                                </DrawerClose>
                             }
 
                             <div className="text-xl text-light-7 font-ui-text-2" >

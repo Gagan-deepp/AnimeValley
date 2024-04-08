@@ -13,6 +13,7 @@ const Header = () => {
         <Link href={"/"} >
           <Image
             src={"/addimg/test1.png"}
+            alt='logo'
             height={38}
             width={60}
             className='object-cover'

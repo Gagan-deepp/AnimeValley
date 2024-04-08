@@ -26,7 +26,7 @@ const Rightsidebar = async () => {
             : result.allCommunities.map((community, index) => (
               <Link href={`/community/${community.uniqueID}`} key={index}
                 style={{ background: `${bgs[(index % 3 + 3) % 3]}` }}
-                className={`rounded-3xl p-2  gap-1 flex flex-col h-[15rem] w-[10rem]`} >
+                className={`rounded-3xl p-2  gap-1 flex flex-col h-[15rem] w-full md:w-[10rem]`} >
 
                 <div className="flex gap-2 items-center " >
                   <div className="w-8 h-8 relative" >

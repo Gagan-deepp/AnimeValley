@@ -47,7 +47,7 @@ const Comment = ({ talkId, currentUserImg, currentUserId }) => {
             <FormItem className=" flex gap-2 w-full items-center" >
 
               <FormLabel >
-                <Image src={currentUserImg} width={48} height={48} className="rounded-full" />
+                <Image src={currentUserImg} alt="user" width={48} height={48} className="rounded-full" />
               </FormLabel>
 
               <FormControl>
@@ -55,7 +55,7 @@ const Comment = ({ talkId, currentUserImg, currentUserId }) => {
                   type="text"
                   placeholder="Enter Your Comment"
                   className="no-focus border-none rounded-[0.5rem] text-light-5 outline-none"
-                  autocomplete="off"
+                  autoComplete="off"
                   {...field}
                 />
               </FormControl>

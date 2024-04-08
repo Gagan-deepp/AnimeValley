@@ -20,6 +20,7 @@ const Leftsidebar = () => {
         <Link href={"/"} >
           <Image
             src={"/addimg/test1.png"}
+            alt='logo'
             height={30}
             width={55}
             className='object-cover'
@@ -32,7 +33,7 @@ const Leftsidebar = () => {
         <ul className='flex flex-col gap-8' >
           {sideBarItem.map((items, index) => {
 
-            const isActive = pathname.includes(items.href)
+            const isActive = pathname === (items.href)
             if (items.href === "/profile") items.href = `${items.href}/${userId}`;
 
             return (

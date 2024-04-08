@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
                     <div className="flex" >
                         <main className="flex-1 relative" >
                             <section className='flex' >
-                                <Header />
+
                                 {children}
                                 <BottomNav />
                             </section>

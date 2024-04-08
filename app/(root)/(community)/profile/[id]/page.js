@@ -5,6 +5,7 @@ import { fetchUser } from "@/lib/actions/user.actions";
 import AddTalk from "@/components/talks/AddTalk";
 import { currentUser } from "@clerk/nextjs"
 import { redirect } from "next/navigation";
+import AccountBack from "@/components/webcomp/AccountBack";
 
 const page = async ({ params }) => {
 
@@ -17,7 +18,7 @@ const page = async ({ params }) => {
   const userData = {
     Clerkid: user.id,
     Mongoid: userInfo.id,
-    username: user.username,
+    username: user.username || userInfo.userName,
     name: userInfo.name || "",
     bio: userInfo.bio || "",
     image: userInfo ? userInfo?.image : user.imageUrl,
@@ -32,7 +33,8 @@ const page = async ({ params }) => {
           <div className="flex-1 sm:mt-8 flex flex-col gap-4" >
             <h3 className="heading-new sm:flex hidden" > Whispers of Identity </h3>
 
-            <div className="flex flex-col " >
+            <div className="flex flex-col relative" >
+              <AccountBack title="Whispers of Identity" />
               <ProfileHeader user={userData} accountType='User' />
               <ProfileTab length={userData.talksLength} currentUserId={user.id} accountId={userInfo.id} accountType='User' />
             </div>

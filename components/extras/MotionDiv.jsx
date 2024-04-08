@@ -1,8 +1,13 @@
 'use client'
 import { motion, useScroll, useTransform } from "framer-motion"
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
+import { IoChevronBackOutline } from "react-icons/io5";
 
-const MotionDiv = ({ children }) => {
+import Lenis from '@studio-freight/lenis'
+import { useRouter } from "next/navigation";
+
+
+export const MotionDiv = ({ children }) => {
 
     const targetRef = useRef();
     const { scrollYProgress } = useScroll({
@@ -33,4 +38,31 @@ const MotionDiv = ({ children }) => {
     )
 }
 
-export default MotionDiv
+export const LenisDiv = ({ children }) => {
+    useEffect(() => {
+        const lenis = new Lenis()
+        function raf(time) {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+        }
+
+        requestAnimationFrame(raf)
+    }, [])
+
+    return (
+        <div className="overflow-y-auto" >
+            {children}
+        </div>
+    )
+}
+
+export const BackBtn = () => {
+
+    const router = useRouter()
+
+    return (
+        <div onClick={router.back} className="cursor-pointer" >
+            <IoChevronBackOutline className="text-light-2 text-2xl font-bold" />
+        </div>
+    )
+}
