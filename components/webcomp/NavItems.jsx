@@ -12,7 +12,7 @@ const NavItems = () => {
         <div>
             <ul className='flex gap-3 justify-evenly'>
                 {navitemData.map((items, index) => {
-                    if (pathname !== "/" && pathname.includes(items.href)) {
+                    if (pathname !== "/" && pathname.split("/")[1] === items.href.split("/")[1]) {
                         isActive = true
                     }
                     else if (pathname === "/" && items.href === "/") {
