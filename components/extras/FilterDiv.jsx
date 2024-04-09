@@ -28,7 +28,7 @@ const FilterDiv = ({ text }) => {
     ]
 
     return (
-        <div className='flex flex-row gap-6 items-center' >
+        <div className='flex flex-row gap-6 items-center max-w-[100vw]' >
             <motion.div whileTap={{ scale: 0.9 }} className="bg-mainColor-2 p-2 rounded-full w-fit h-fit" >
                 <Image src={'/assest/filter.svg'} alt='filter' width={20} height={20} />
             </motion.div>
@@ -37,7 +37,7 @@ const FilterDiv = ({ text }) => {
                 {filterOptions.map((filter, i) => (
                     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.9 }} key={i} className='flex gap-2 p-2 bg-glassmorphism rounded-2xl items-center cursor-pointer' onClick={e => setType(filter.type)} >
                         <Image src={filter.imgURL} alt='filter' width={15} height={15} />
-                        <p className='text-sm text-light-7 font-ui-text' > {filter.name} </p>
+                        <p className='text-sm text-light-7 font-ui-text sm:flex hidden' > {filter.name} </p>
                     </motion.div>
                 ))}
             </div>

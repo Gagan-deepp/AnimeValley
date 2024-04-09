@@ -46,8 +46,6 @@ export default OurCommunity
 const Skeleton = ({ image, bg }) => (
 
     <Link href={"/community"} className="relative h-full rounded-xl flex p-4 items-center gap-3">
-        {/* <Image src={bg} alt="test" fill className="z-[-1] rounded-xl" /> */}
-
         {image && <div className="relative w-20 h-20" >
             <Image src={image} alt="test" fill />
         </div>}

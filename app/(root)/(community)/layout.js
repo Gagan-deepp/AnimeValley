@@ -8,18 +8,19 @@ export const metadata = {
 
 import Footer from "@/components/webcomp/Footer";
 import Leftsidebar from "@/components/talks/Leftsidebar";
+import { LenisDiv } from "@/components/extras/MotionDiv";
 
 export default function RootLayout({ children }) {
 
     return (
-        <div className="flex min-h-[100dvh] flex-col relative w-full" >
+        <LenisDiv className="flex min-h-[100dvh] flex-col relative w-full" >
             <Leftsidebar />
-            <main className="flex-1 bg-[#383143] w-full" >
+            <main className="flex-1 bg-[#383143] w-full z-10" >
                 <section className='' >
                     {children}
                 </section>
             </main>
             <Footer />
-        </div>
+        </LenisDiv>
     );
 }

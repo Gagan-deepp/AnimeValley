@@ -13,7 +13,7 @@ const page = async ({ searchParams }) => {
 
   const resultPost = await fetchPost({ searchText: searchParams.search ? searchParams.search : "", pageNo: 1, pageSize: 5 });
   return (
-    <div className='main-container' >
+    <div className='main-container pb-24' >
       <AddTalk />
       <div className="w-full" >
         <div className="w-full flex gap-6" >

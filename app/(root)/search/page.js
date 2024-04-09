@@ -14,6 +14,8 @@ const page = async ({ searchParams }) => {
     const animes = await searchAll(searchParams.anime, searchParams.type ? searchParams.type : null)
     const userinfo = await fetchUser({ userID: user?.id })
 
+
+
     return (
         <div className="main-container pt-0" >
             <Header />
@@ -37,7 +39,7 @@ const page = async ({ searchParams }) => {
                                         </div>
 
                                         <h2 className="font-semibold font-ui-text text-light-2 line-clamp-1 w-full text-base absolute top-0 pl-4 pt-4 ">
-                                            {anime.title}
+                                            {anime.title_english}
                                         </h2>
 
                                         <div className="flex gap-3 z-[1] absolute bottom-[9px] left-0 text-ellipsis whitespace-nowrap px-3 items-end">
@@ -49,14 +51,6 @@ const page = async ({ searchParams }) => {
                                                     </span>
                                                 </p>
                                             </div>
-                                            {userinfo && <div>
-                                                <div className="items-center flex">
-                                                    <div
-                                                        className='bg-light-2 rounded-full px-3 py-3 cursor-pointer' >
-                                                        <Image src={"/assest/bookmark.svg"} width={18} height={22} alt='star' />
-                                                    </div>
-                                                </div>
-                                            </div>}
                                         </div>
                                     </div>
 

@@ -22,10 +22,10 @@ const RootSearch = () => {
 
 
     return (
-        <div className='bg-glassmorphism3 w-full h-full p-3 rounded-xl' >
+        <div className='bg-glassmorphism3 w-full h-full px-2 py-1 rounded-xl' >
             <div className='flex flex-1 items-center gap-2 rounded-xl' >
                 <Image src={'/assest/search.svg'} alt='search' width={20} height={20} />
-                <Input className='bg-transparent border-none placeholder:text-light-6 text-light-6 w-full h-full text-xs font-bold font-ui-text-3 p-0 focus:placeholder:opacity-0 placeholder:opacity-[1] duration-300 ease-in-out no-focus' type="text" value={text} onChange={e => setText(e.target.value)} placeholder="Explore...." />
+                <Input className='bg-transparent px-0 m-0 text-light-6 font-ui-text-3 text-sm font-bold placeholder:text-gray-6 no-focus border-0' type="text" value={text} onChange={e => setText(e.target.value)} placeholder="Explore...." />
             </div>
         </div>
 

@@ -50,7 +50,7 @@ export const LenisDiv = ({ children, className }) => {
     }, [])
 
     return (
-        <div className={`overflow-y-auto w-full h-full ${className ? className : ""} `}  >
+        <div className={` ${className ? className : "overflow-y-auto w-full h-full"} `}  >
             {children}
         </div>
     )

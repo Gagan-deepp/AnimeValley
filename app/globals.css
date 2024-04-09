@@ -65,7 +65,7 @@
 
   /* bg-[#1f2035] */
   .leftsidebar {
-    @apply absolute left-0 top-0 z-[5] flex h-[100dvh] w-fit pr-4 flex-col items-center gap-4 overflow-auto pb-5 pl-6 pt-4 max-md:hidden;
+    @apply absolute left-0 top-0 z-50 flex h-[100dvh] w-fit pr-4 flex-col items-center gap-4 overflow-auto pb-5 pl-6 pt-4 max-md:hidden;
   }
 
   .main-container {
