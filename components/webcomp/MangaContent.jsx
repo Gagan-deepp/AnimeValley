@@ -8,8 +8,6 @@ const MangaContent = async ({ page, title, type }) => {
     let response;
     if (page === 'second') {
         response = await fetchPopularManhwa(1)
-    } else if (page === 'third') {
-        response = await fetchPopularManhua(1)
     }
     else if (page === 'fourth') {
         response = await fetchPopularLightNovel(1)

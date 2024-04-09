@@ -1,4 +1,4 @@
-import MotionDiv from "@/components/extras/MotionDiv"
+import { MotionDiv } from "@/components/extras/MotionDiv"
 import AnimeDetail from "@/components/webcomp/AnimeDetail"
 import Header from "@/components/webcomp/Header"
 import { fetchAnimeData, fetchAnimeImage } from "@/lib/actions/fetch.action"

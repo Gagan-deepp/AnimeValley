@@ -10,10 +10,12 @@ import { usePathname, useRouter } from "next/navigation";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { createTalk } from "@/lib/actions/talks.action";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
+import { useState } from "react";
 
 
 const CreateTalk = ({ userId, communities }) => {
   const router = useRouter();
+  const [disable, setDisable] = useState(false)
   const pathname = usePathname();
 
   const form = useForm({
@@ -28,7 +30,7 @@ const CreateTalk = ({ userId, communities }) => {
 
   // NOTE: onSubmit
   const onSubmit = async (values) => {
-
+    setDisable(false)
     await createTalk(
       {
         heading: values.talk_head,
@@ -38,6 +40,7 @@ const CreateTalk = ({ userId, communities }) => {
         path: pathname
       }
     )
+    setDisable(true)
     router.push("/community")
   }
 
@@ -111,7 +114,7 @@ const CreateTalk = ({ userId, communities }) => {
           )}
         />
 
-        <Button type="submit" className="bg-button-bg rounded-xl font-semibold" >Submit</Button>
+        <Button type="submit" className="bg-button-bg rounded-xl font-semibold hover:scale-[1.1] duration-150 ease-in-out " disabled={disable} >Submit</Button>
       </form>
     </Form>
   )

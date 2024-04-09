@@ -31,7 +31,7 @@ const ProfileTalk = async ({ accountType, accountId, currentUserId }) => {
                                 parentId={talk.parentId}
                                 heading={talk.heading}
                                 content={talk.content}
-                                author={accountType === "User" ? { name: userTalks.userName, image: userTalks.image } : { name: talk.author.name, image: talk.author.image }}
+                                author={accountType === "User" ? { userName: userTalks.userName, image: userTalks.image } : { userName: talk.author.name, image: talk.author.image }}
                                 community={talk.community}
                                 createdAt={talk.createdAt}
                                 comments={talk.children}

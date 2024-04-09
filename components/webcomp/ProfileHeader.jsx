@@ -30,11 +30,11 @@ const ProfileHeader = ({ user, accountType }) => {
                         <div className="flex flex-col gap-3 md:gap-1" >
                             <h3 className="subHeading text-light-2" > {user.name} </h3>
 
-                            <div className=" flex md:hidden gap-1 items-start pr-4 " >
+                            {accountType === 'User' && <div className=" flex md:hidden gap-1 items-start pr-4 " >
                                 <Image src={"/assest/id.svg"} alt="bio" width={18} height={18} />
 
                                 <p className="text-light-6 font-ui-text text-xs leading-4" > @{user.username} </p>
-                            </div>
+                            </div>}
                             <div className="flex gap-1 items-start pr-4" >
                                 <Image src={"/assest/bio.svg"} alt="bio" width={18} height={18} />
 

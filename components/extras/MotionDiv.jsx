@@ -38,7 +38,7 @@ export const MotionDiv = ({ children }) => {
     )
 }
 
-export const LenisDiv = ({ children }) => {
+export const LenisDiv = ({ children, className }) => {
     useEffect(() => {
         const lenis = new Lenis()
         function raf(time) {
@@ -50,7 +50,7 @@ export const LenisDiv = ({ children }) => {
     }, [])
 
     return (
-        <div className="overflow-y-auto" >
+        <div className={`overflow-y-auto w-full h-full ${className ? className : ""} `}  >
             {children}
         </div>
     )

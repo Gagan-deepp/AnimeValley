@@ -170,8 +170,8 @@ export const bottomNavItem = [
         imgURL: "/assest/homeActive.svg",
     },
     {
-        name: 'Manga',
-        href: '/manga',
+        name: 'search',
+        href: '/search',
         imgURL: "/assest/bottomSearch.svg",
     },
 

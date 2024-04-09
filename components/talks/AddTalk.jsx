@@ -1,9 +1,9 @@
 "use client"
 import { Button } from '../ui/button'
 import { OrganizationSwitcher, SignedOut } from '@clerk/nextjs'
+import Image from 'next/image'
 import Link from 'next/link'
 import { dark } from '@clerk/themes'
-import Image from 'next/image'
 import { Input } from '../ui/input'
 import { usePathname, useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
@@ -14,7 +14,7 @@ const AddTalk = () => {
     const router = useRouter()
     const pathname = usePathname()
     const [text, setText] = useState("")
-    const [query] = useDebounce(text, 750)
+    const [query] = useDebounce(text, 550)
     // const initialRender = useRef(true)
 
     useEffect(() => {

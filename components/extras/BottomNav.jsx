@@ -9,13 +9,20 @@ import { usePathname } from 'next/navigation'
 const BottomNav = () => {
     const pathname = usePathname();
     const { userId } = useAuth();
+    let isActive;
     return (
         <div className='flex items-center sm:hidden w-full h-fit bg-dark-1 fixed -bottom-0.5 left-0 right-0 px-6 py-2' >
             <nav className='flex-1'>
                 <ul className='flex justify-around gap-5 flex-1' >
                     {bottomNavItem.map((items, index) => {
 
-                        const isActive = pathname === items.href
+                        if (pathname !== "/" && pathname.split("/")[1] === items.href.split("/")[1]) {
+                            isActive = true
+                        }
+                        else if (pathname === "/" && items.href === "/") {
+                            isActive = true
+                        }
+                        else isActive = false
                         if (items.href === "/profile") items.href = `${items.href}/${userId}`;
 
                         return (

@@ -8,6 +8,7 @@ import { fetchCommunityInfo } from "@/lib/actions/community.action";
 import { currentUser } from "@clerk/nextjs"
 import Image from "next/image";
 import AddTalk from "@/components/talks/AddTalk";
+import AccountBack from "@/components/webcomp/AccountBack";
 
 const page = async ({ params }) => {
 
@@ -17,7 +18,6 @@ const page = async ({ params }) => {
 
     const userData = {
         id: user.id,
-        username: user.username,
         name: communityInfo.name || "",
         bio: communityInfo.bio || "",
         image: communityInfo ? communityInfo?.image : user.imageUrl,
@@ -29,8 +29,9 @@ const page = async ({ params }) => {
             <div className="w-full" >
                 <div className="w-full flex gap-6" >
                     <div className="flex-1 mt-8 flex flex-col gap-4" >
-                        <h3 className="heading-new" > Whispers of Identity </h3>
-                        <div>
+                        <h3 className="heading-new sm:flex hidden" > Whispers of Identity </h3>
+                        <div className="flex flex-col relative" >
+                            <AccountBack title="Whispers of Identity" />
                             <ProfileHeader user={userData} />
                             <div className="mt-4" >
                                 <Tabs className="w-full rounded-2xl" defaultValue="talks" >

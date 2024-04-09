@@ -9,7 +9,6 @@ const page = () => {
                 <div className="slideWrapper flex flex-col gap-28">
                     <MangaContent title="Timeless Manga Gems" type="manga" />
                     <MangaContent page={'second'} title="Manhwa Masterpieces" type="manga" />
-                    <MangaContent page={'third'} title="Whispers of Manhua Dreamscape" type="manga" />
                     <MangaContent page={'fourth'} title="Luminous Light Novels Library" type="manga" />
                 </div>
             </section>

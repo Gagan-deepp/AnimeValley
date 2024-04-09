@@ -1,10 +1,8 @@
-import { LenisDiv } from "@/components/extras/MotionDiv";
 import AddTalk from "@/components/talks/AddTalk";
 import Rightsidebar from '@/components/talks/Rightsidebar';
 import TalkCard from '@/components/talks/TalkCard';
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { fetchPost } from '@/lib/actions/talks.action';
-import { fetchUser } from '@/lib/actions/user.actions';
 import { currentUser } from '@clerk/nextjs'
 import { TbArrowBigRightFilled } from "react-icons/tb";
 

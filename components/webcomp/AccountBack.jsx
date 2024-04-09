@@ -3,7 +3,7 @@ import { BackBtn } from '../extras/MotionDiv'
 
 const AccountBack = ({ title }) => {
   return (
-    <div className='w-full flex items-center bg-mainColor-2 py-3 md:hidden fixed inset-x-0 top-0' >
+    <div className='w-full flex items-center bg-glassmorphism3 py-3 md:hidden fixed inset-x-0 top-0 z-40' >
       <div>
         <BackBtn />
       </div>

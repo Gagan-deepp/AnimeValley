@@ -8,8 +8,6 @@ const TopContent = async ({ page, title, type }) => {
     let response;
     if (page === 'second') {
         response = await fetchPopularAnime(1)
-    } else if (page === 'third') {
-        response = await fetchPopularmanga(1)
     }
     else if (page === 'fourth') {
         response = await fetchAnimeMovie(1)

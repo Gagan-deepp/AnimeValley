@@ -1,4 +1,5 @@
 'use client'
+import Link from 'next/link'
 import Image from 'next/image'
 import React, { useEffect, useRef } from 'react'
 import Lenis from '@studio-freight/lenis'
@@ -7,7 +8,6 @@ import { motion } from "framer-motion"
 import { usePathname } from 'next/navigation'
 import { addBookMarkUser } from '@/lib/actions/user.actions'
 import { toast } from 'sonner'
-import Link from 'next/link'
 
 const Card = ({ data, userID, type }) => {
 
