@@ -9,7 +9,7 @@ const RootSearch = () => {
 
     const router = useRouter()
     const [text, setText] = useState("")
-    const [query] = useDebounce(text, 550)
+    const [query] = useDebounce(text, 250)
 
     useEffect(() => {
 

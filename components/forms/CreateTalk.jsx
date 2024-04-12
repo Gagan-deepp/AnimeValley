@@ -11,6 +11,8 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { createTalk } from "@/lib/actions/talks.action";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
 import { useState } from "react";
+import { toast } from 'sonner'
+import { FaCircleCheck } from "react-icons/fa6";
 
 
 const CreateTalk = ({ userId, communities }) => {
@@ -40,6 +42,16 @@ const CreateTalk = ({ userId, communities }) => {
         path: pathname
       }
     )
+    toast("Talk Created", {
+      icon: <FaCircleCheck />,
+      unstyled: true,
+      classNames: {
+        toast: 'flex items-center rounded-[10px] border-0 p-3 bg-light-2',
+        title: 'text-dark-1 text-base font-ui-text font-bold',
+        cancelButton: 'bg-orange-400',
+        closeButton: 'bg-lime-400',
+      }
+    })
     setDisable(true)
     router.push("/community")
   }

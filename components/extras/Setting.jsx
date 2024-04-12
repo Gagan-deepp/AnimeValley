@@ -5,11 +5,27 @@ import { IoClose } from "react-icons/io5";
 import { SlOptionsVertical } from "react-icons/sl";
 import { usePathname } from "next/navigation";
 import { deleteTalk } from "@/lib/actions/talks.action"
+import { RiDeleteBin6Fill } from "react-icons/ri";
+import { toast } from 'sonner'
 import { Drawer, DrawerClose, DrawerContent, DrawerHeader, DrawerTitle, DrawerTrigger } from "@/components/ui/drawer"
 
 
 const Setting = ({ id, currentUserId, authorID, isComment }) => {
     const pathname = usePathname();
+
+    const handleDel = async () => {
+        await deleteTalk(JSON.parse(id), pathname)
+        toast("Talk Deletd", {
+            icon: <RiDeleteBin6Fill />,
+            unstyled: true,
+            classNames: {
+                toast: 'flex items-center rounded-[10px] border-0 p-3 bg-light-2',
+                title: 'text-dark-1 text-base font-ui-text font-bold',
+                cancelButton: 'bg-orange-400',
+                closeButton: 'bg-lime-400',
+            }
+        })
+    }
     return (
         <div>
             <Drawer>
@@ -35,9 +51,7 @@ const Setting = ({ id, currentUserId, authorID, isComment }) => {
                             {currentUserId === authorID &&
                                 <DrawerClose className="flex items-center cursor-pointer" >
                                     < div className='flex-center gap-3'
-                                        onClick={async () => {
-                                            await deleteTalk(JSON.parse(id), pathname)
-                                        }}>
+                                        onClick={e => handleDel(e)}>
                                         <Image src={'/assest/delete.svg'} alt='share' width={18} height={18} />
                                         <p className="text-xl text-light-7 font-ui-text-2" > Delete </p>
                                     </div>

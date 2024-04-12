@@ -15,11 +15,11 @@ const page = async ({ searchParams }) => {
   return (
     <div className='main-container pb-24' >
       <AddTalk />
-      <div className="w-full" >
-        <div className="w-full flex gap-6" >
-          <div className='w-full flex-1' >
+      <div className="w-full h-full" >
+        <div className="w-full flex gap-6 h-full" >
+          <div className='w-full flex-1 h-full flex-grow' >
             <div className='my-8 mb-4 text-light-5'>
-              <h1 className='font-heading-2 text-3xl font-medium flex items-center gap-2' > Whispers of Connection <TbArrowBigRightFilled />  </h1>
+              <h1 className='font-heading-2 text-3xl font-medium flex items-center gap-2' > Whispers of Connection <TbArrowBigRightFilled /> </h1>
             </div>
 
             <div className='flex xl:hidden' >
@@ -29,7 +29,7 @@ const page = async ({ searchParams }) => {
               <h1 className='font-heading-2 text-3xl font-medium flex items-center gap-2' > Whispers in Talk <TbArrowBigRightFilled />  </h1>
             </div>
 
-            <ScrollArea className="mb-2 max-h-[90vh] bg-[#322d37a1] p-4 rounded-2xl overflow-y-auto" >
+            <ScrollArea className="mb-2 h-[90vh] bg-[#322d37a1] p-4 rounded-2xl overflow-y-auto" >
               <div className="flex flex-col gap-2 items-center" >
                 {resultPost.allTalks.length === 0 ? (<p> No Talks Currently On At This Time !! </p>) : (
                   resultPost?.allTalks?.map((talk, index) => (

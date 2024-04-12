@@ -8,6 +8,7 @@ import { motion } from "framer-motion"
 import { usePathname } from 'next/navigation'
 import { addBookMarkUser } from '@/lib/actions/user.actions'
 import { toast } from 'sonner'
+import { FaCircleCheck } from 'react-icons/fa6'
 
 const Card = ({ data, userID, type }) => {
 
@@ -23,7 +24,16 @@ const Card = ({ data, userID, type }) => {
             path: pathname
         })
 
-        toast.success("Bookmark added")
+        toast("Bookmark Added", {
+            icon: <FaCircleCheck />,
+            unstyled: true,
+            classNames: {
+                toast: 'flex items-center rounded-[10px] border-0 p-3 bg-light-2',
+                title: 'text-dark-1 text-base font-ui-text font-bold',
+                cancelButton: 'bg-orange-400',
+                closeButton: 'bg-lime-400',
+            }
+        })
     }
 
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'start' })

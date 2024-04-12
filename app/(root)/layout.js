@@ -2,8 +2,7 @@ import { Inter } from "next/font/google";
 import "../globals.css";
 import { Toaster } from 'sonner'
 import { ClerkProvider } from "@clerk/nextjs";
-import Header from "@/components/webcomp/Header";
-import Footer from "@/components/webcomp/Footer";
+import { FaCircleCheck } from "react-icons/fa6";
 import BottomNav from "@/components/extras/BottomNav";
 
 const inter = Inter({ subsets: ["latin"] });
