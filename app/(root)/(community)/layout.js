@@ -6,7 +6,6 @@ export const metadata = {
     description: "A common hotspot for all anime , manga , manhwalover",
 };
 
-import Footer from "@/components/webcomp/Footer";
 import Leftsidebar from "@/components/talks/Leftsidebar";
 import { LenisDiv } from "@/components/extras/MotionDiv";
 
@@ -20,7 +19,6 @@ export default function RootLayout({ children }) {
                     {children}
                 </section>
             </main>
-            <Footer />
         </LenisDiv>
     );
 }

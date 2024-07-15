@@ -126,7 +126,7 @@ const CreateTalk = ({ userId, communities }) => {
           )}
         />
 
-        <Button type="submit" className="bg-button-bg rounded-xl font-semibold hover:scale-[1.1] duration-150 ease-in-out " disabled={disable} >Submit</Button>
+        <Button type="submit" className="bg-button-bg rounded-xl font-semibold hover:scale-[1.02] duration-500 ease-in-out " disabled={disable} >Submit</Button>
       </form>
     </Form>
   )

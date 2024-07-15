@@ -29,11 +29,11 @@ const page = async ({ searchParams }) => {
               <h1 className='font-heading-2 text-3xl font-medium flex items-center gap-2' > Whispers in Talk <TbArrowBigRightFilled />  </h1>
             </div>
 
-            <ScrollArea className="mb-2 h-[90vh] bg-[#322d37a1] p-4 rounded-2xl overflow-y-auto" >
+            <div className="h-[90vh] w-full bg-[#322d37a1] p-4 rounded-2xl relative overflow-y-scroll"  >
               <div className="flex flex-col gap-2 items-center" >
                 {resultPost.allTalks.length === 0 ? (<p> No Talks Currently On At This Time !! </p>) : (
                   resultPost?.allTalks?.map((talk, index) => (
-                    <div key={index} className="w-full justify-center flex" >
+                    <div key={index} className="w-full justify-center flex" > 
                       <TalkCard
                         id={talk._id}
                         currentUserId={user.id}
@@ -48,7 +48,7 @@ const page = async ({ searchParams }) => {
                     </div>
                   )))}
               </div>
-            </ScrollArea>
+            </div>
           </div>
           <div className='hidden xl:flex' >
             <Rightsidebar />
