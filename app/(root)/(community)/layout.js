@@ -14,11 +14,11 @@ export default function RootLayout({ children }) {
     return (
         <LenisDiv className="flex min-h-[100dvh] flex-col relative w-full" >
             <Leftsidebar />
-            <main className="flex-1 bg-[#383143] w-full z-10" >
+            <div className="bg-[#383143] w-full z-10" >
                 <section className='' >
                     {children}
                 </section>
-            </main>
+            </div>
         </LenisDiv>
     );
 }

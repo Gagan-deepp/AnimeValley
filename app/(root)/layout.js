@@ -20,8 +20,8 @@ export default function RootLayout({ children }) {
         <ClerkProvider>
             <html lang="en">
                 <body className={`${inter.className} bg-dark-4`}>
-                    <div className="flex" >
-                        <main className="flex-1 relative" >
+                    <div className="" >
+                        <main className="relative" >
                             <section className='flex' >
 
                                 {children}
