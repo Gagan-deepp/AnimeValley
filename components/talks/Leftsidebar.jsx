@@ -14,7 +14,7 @@ const Leftsidebar = () => {
 
 
   return (
-    <div className={`leftsidebar overflow-hidden pl-3 `}>
+    <div className={`leftsidebar overflow-hidden pl-3 fixed `}>
 
       <div className='flex flex-col' >
         <Link href={"/"} >

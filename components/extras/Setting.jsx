@@ -15,7 +15,7 @@ const Setting = ({ id, currentUserId, authorID, isComment }) => {
 
     const handleDel = async () => {
         await deleteTalk(JSON.parse(id), pathname)
-        toast("Talk Deletd", {
+        toast("Talk Deleted", {
             icon: <RiDeleteBin6Fill />,
             unstyled: true,
             classNames: {
