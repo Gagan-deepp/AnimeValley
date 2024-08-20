@@ -23,11 +23,11 @@ const Header = () => {
 
         <MobileNav />
 
-        <SignedIn>
-          <nav className='flex-[0.3] hidden sm:flex' >
-            <NavItems />
-          </nav>
-        </SignedIn>
+        {/* <SignedIn> */}
+        <nav className='flex-[0.3] hidden sm:flex' >
+          <NavItems />
+        </nav>
+        {/* </SignedIn> */}
 
         <div className='hidden sm:flex flex-1 mr-[-2rem]' >
           <RootSearch />
