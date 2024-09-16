@@ -6,19 +6,17 @@ export const metadata = {
     description: "A common hotspot for all anime , manga , manhwalover",
 };
 
-import Leftsidebar from "@/components/talks/Leftsidebar";
 import { LenisDiv } from "@/components/extras/MotionDiv";
+import Leftsidebar from "@/components/talks/Leftsidebar";
 
 export default function RootLayout({ children }) {
 
     return (
-        <LenisDiv className="flex min-h-[100dvh] flex-col relative w-full" >
+        <LenisDiv>
             <Leftsidebar />
             <div className="bg-[#383143] w-full z-10 " >
-                <section className='' >
-                    {children}
-                </section>
+                {children}
             </div>
         </LenisDiv>
-    );
+    )
 }

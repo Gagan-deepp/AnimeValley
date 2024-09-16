@@ -1,8 +1,7 @@
 'use client'
 import Link from "next/link"
-import Lenis from '@studio-freight/lenis'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 
 const Footer = () => {
 
@@ -12,16 +11,6 @@ const Footer = () => {
   const p_y = useTransform(scrollYProgress, [0, 1], ["50%", "0%"])
   const scale = useTransform(scrollYProgress, [0, 1], [0.7, 1])
   const opacity = useTransform(scrollYProgress, [0, 1], [0, 1])
-
-  useEffect(() => {
-    const lenis = new Lenis()
-    function raf(time) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
-    }
-
-    requestAnimationFrame(raf)
-  }, [])
 
   return (
 

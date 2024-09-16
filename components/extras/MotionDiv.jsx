@@ -3,7 +3,8 @@ import { motion, useScroll, useTransform } from "framer-motion"
 import { useEffect, useRef } from "react";
 import { IoChevronBackOutline } from "react-icons/io5";
 
-import Lenis from '@studio-freight/lenis'
+import { ReactLenis } from 'lenis/react'
+
 import { useRouter } from "next/navigation";
 
 
@@ -38,23 +39,30 @@ export const MotionDiv = ({ children }) => {
     )
 }
 
-export const LenisDiv = ({ children, className }) => {
-    useEffect(() => {
-        const lenis = new Lenis()
-        function raf(time) {
-            lenis.raf(time)
-            requestAnimationFrame(raf)
-        }
+export const LenisDiv = ({ children }) => {
+    return (
+        <ReactLenis root>
+            {children}
+        </ReactLenis>
+    )
+}
 
-        requestAnimationFrame(raf)
-    }, [])
+export const ScrollableArea = ({ children, className }) => {
+    const scrollableRef = useRef(null)
 
     return (
-        <div className={` ${className ? className : "overflow-y-auto w-full h-full"} `}  >
+        <div
+            ref={scrollableRef}
+            className={`overflow-y-auto ${className || ''}`}
+            data-lenis-prevent
+            data-lenis-prevent-wheel
+            data-lenis-prevent-touch
+        >
             {children}
         </div>
     )
 }
+
 
 export const BackBtn = () => {
 
