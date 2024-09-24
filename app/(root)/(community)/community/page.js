@@ -13,12 +13,12 @@ const page = async ({ searchParams }) => {
 
   const resultPost = await fetchPost({ searchText: searchParams.search ? searchParams.search : "", pageNo: 1, pageSize: 5 });
   return (
-    <div className='w-full md:w-[90%] mx-auto min-h-screen sm:px-6 px-6 sm:pb-10 pt-5 max-md:pb-5 pb-10 overflow-hidden'>
+    <div className='w-full md:w-[90%] mx-auto min-h-dvh pb-10 sm:px-6 px-6 pt-5 overflow-hidden '>
       <AddTalk />
-      <div className="h-screen flex flex-col w-full">
+      <div className="flex flex-col w-full xl:h-dvh h-fit">
         <div className="flex gap-6 w-full h-full">
           {/* Whisper Connection and Talk Div */}
-          <div className='h-full flex flex-col w-[65%]'>
+          <div className='h-full flex flex-col xl:w-[65%] w-full'>
 
             {/* Heading */}
             <div className='my-8 mb-4 text-light-5'>
@@ -28,8 +28,8 @@ const page = async ({ searchParams }) => {
             </div>
 
             {/* Talk Card */}
-            <div className="w-full bg-[#322d37a1] p-4 rounded-2xl flex-1 overflow-hidden">
-              <ScrollableArea className="flex flex-col gap-2 items-center h-full">
+            <div className="w-full bg-[#322d37a1] p-4 rounded-2xl flex-1 overflow-hidden xl:h-full h-[75vh]">
+              <ScrollableArea className="flex flex-col gap-2 items-center h-[75dvh] xl:h-full">
                 {resultPost.allTalks.length === 0 ? (
                   <p>No Talks Currently On At This Time !!</p>
                 ) : (

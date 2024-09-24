@@ -86,7 +86,7 @@ body {
   }
 
   .rightsidebarAdj {
-    @apply z-[5] flex w-full flex-col justify-between gap-12 overflow-hidden px-4 pb-6 pt-4;
+    @apply w-full flex-col overflow-hidden px-4 pb-6 pt-4;
   }
 
   .options {
