@@ -89,6 +89,10 @@ export const navitemData = [
         href: '/manga',
     },
     {
+        name: 'profile',
+        href: '/profile',
+    },
+    {
         name: 'Community',
         href: '/community',
     },
